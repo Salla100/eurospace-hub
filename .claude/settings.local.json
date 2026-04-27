@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(npm install *)",
+      "Read(//usr/local/**)",
+      "Bash(cmd.exe /c \"where node\")",
+      "PowerShell(node --version)",
+      "PowerShell(npm --version)",
+      "Bash(python3 -c \"import json; data=json.load\\(open\\('C:/Users/sven1/Desktop/Europe_Space/data/opportunities.json'\\)\\); print\\(f'opportunities.json: {len\\(data\\)} entries'\\)\")",
+      "Bash(python3 -c \"import json; data=json.load\\(open\\('C:/Users/sven1/Desktop/Europe_Space/data/members_bvsr.json'\\)\\); print\\(f'members_bvsr.json: {len\\(data\\)} entries'\\)\")",
+      "Bash(python3 -c \"import json; data=json.load\\(open\\('C:/Users/sven1/Desktop/Europe_Space/data/members_norstec.json'\\)\\); print\\(f'members_norstec.json: {len\\(data\\)} entries'\\)\")",
+      "mcp__Claude_Preview__preview_start",
+      "PowerShell(\\(Get-Command node -ErrorAction SilentlyContinue\\).Source; \\(Get-Command npm -ErrorAction SilentlyContinue\\).Source; Get-ChildItem \"C:\\\\Program Files\\\\nodejs\\\\node.exe\" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName; Get-ChildItem \"$env:APPDATA\\\\npm\\\\npm.cmd\" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName; Get-ChildItem \"$env:LOCALAPPDATA\\\\Programs\\\\nodejs\\\\node.exe\" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName)",
+      "PowerShell(Get-ChildItem \"C:\\\\Program Files\\\\nodejs\\\\\" -ErrorAction SilentlyContinue | Select-Object Name; Get-ChildItem \"C:\\\\Program Files \\(x86\\)\\\\nodejs\\\\\" -ErrorAction SilentlyContinue | Select-Object Name; Get-ChildItem \"$env:LOCALAPPDATA\\\\Programs\\\\nodejs\\\\\" -ErrorAction SilentlyContinue | Select-Object Name; where.exe node 2>$null; where.exe npm 2>$null)",
+      "PowerShell(cmd /c \"where node & where npm\")",
+      "PowerShell(cmd /c \"node --version & npm --version\")",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\sven1\\\\AppData\\\\Local\" -Directory -ErrorAction SilentlyContinue | Where-Object { $_.Name -match \"node|nvm|fnm\" } | Select-Object FullName)",
+      "PowerShell(Get-ChildItem \"C:\\\\Program Files\" -Directory -ErrorAction SilentlyContinue | Where-Object { $_.Name -match \"node|Node\" } | Select-Object FullName)",
+      "PowerShell(Test-Path \"C:\\\\Program Files\\\\nodejs\\\\\"; [System.IO.Directory]::Exists\\(\"C:\\\\Program Files\\\\nodejs\\\\\"\\))",
+      "PowerShell([System.IO.Directory]::GetFiles\\(\"C:\\\\Program Files\\\\nodejs\\\\\"\\) | Select-Object)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\sven1\\\\Desktop\\\\Europe_Space\\\\frontend\\\\node_modules\\\\.bin\\\\\" | Where-Object { $_.Name -match \"^vite\" } | Select-Object Name)",
+      "PowerShell([System.IO.Directory]::GetFiles\\(\"C:\\\\Users\\\\sven1\\\\Desktop\\\\Europe_Space\\\\frontend\\\\node_modules\\\\.bin\\\\\"\\) | Where-Object { $_ -match \"vite\" })",
+      "Bash(gh auth *)",
+      "PowerShell(gh auth status)",
+      "PowerShell([System.IO.Directory]::GetFiles\\(\"C:\\\\Users\\\\sven1\\\\AppData\\\\Local\\\\Programs\"\\) | Where-Object { $_ -match \"gh\" }; Get-ChildItem \"C:\\\\Program Files\\\\GitHub CLI\" -ErrorAction SilentlyContinue | Select-Object Name)",
+      "PowerShell(& \"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" auth status)",
+      "PowerShell(New-Item -ItemType Directory -Path \"C:\\\\Users\\\\sven1\\\\Desktop\\\\Europe_Space\\\\frontend\\\\public\\\\data\" -Force)",
+      "PowerShell(Copy-Item \"C:\\\\Users\\\\sven1\\\\Desktop\\\\Europe_Space\\\\data\\\\opportunities.json\" \"C:\\\\Users\\\\sven1\\\\Desktop\\\\Europe_Space\\\\frontend\\\\public\\\\data\\\\opportunities.json\")",
+      "PowerShell(Copy-Item \"C:\\\\Users\\\\sven1\\\\Desktop\\\\Europe_Space\\\\data\\\\members_bvsr.json\" \"C:\\\\Users\\\\sven1\\\\Desktop\\\\Europe_Space\\\\frontend\\\\public\\\\data\\\\members_bvsr.json\")",
+      "PowerShell(Copy-Item \"C:\\\\Users\\\\sven1\\\\Desktop\\\\Europe_Space\\\\data\\\\members_norstec.json\" \"C:\\\\Users\\\\sven1\\\\Desktop\\\\Europe_Space\\\\frontend\\\\public\\\\data\\\\members_norstec.json\")",
+      "PowerShell(New-Item -ItemType Directory -Path \"C:\\\\Users\\\\sven1\\\\Desktop\\\\Europe_Space\\\\.github\\\\workflows\" -Force)"
+    ]
+  }
+}

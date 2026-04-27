@@ -1,0 +1,112 @@
+[
+  {
+    "id": "astro-hvl",
+    "name": "Astro HVL",
+    "university_abbr": "HVL",
+    "city": "Bergen",
+    "country": "Norway",
+    "specialization": "Rocketeering",
+    "website": "https://astrohvl.no",
+    "norstec_member": true,
+    "incubator": false
+  },
+  {
+    "id": "eclipse-nmbu",
+    "name": "Eclipse NMBU",
+    "university_abbr": "NMBU",
+    "city": "Ås",
+    "country": "Norway",
+    "specialization": "Satellites",
+    "website": "https://www.eclipsenmbu.no",
+    "norstec_member": true,
+    "incubator": false
+  },
+  {
+    "id": "ignite-uit",
+    "name": "Ignite UiT",
+    "university_abbr": "UiT",
+    "city": "Tromsø",
+    "country": "Norway",
+    "specialization": "Rocketeering",
+    "website": "https://igniteuit.no",
+    "norstec_member": true,
+    "incubator": false
+  },
+  {
+    "id": "interstellar-uia",
+    "name": "InterstellarSpace",
+    "university_abbr": "UiA",
+    "city": "Grimstad",
+    "country": "Norway",
+    "specialization": "Satellites",
+    "website": "https://interstellaruia.no",
+    "norstec_member": true,
+    "incubator": false
+  },
+  {
+    "id": "orbit-ntnu",
+    "name": "Orbit NTNU",
+    "university_abbr": "NTNU",
+    "city": "Trondheim",
+    "country": "Norway",
+    "specialization": "Satellites",
+    "website": "https://www.orbitntnu.com",
+    "norstec_member": true,
+    "incubator": true
+  },
+  {
+    "id": "polarix-uit",
+    "name": "Polarix UiT",
+    "university_abbr": "UiT",
+    "city": "Narvik",
+    "country": "Norway",
+    "specialization": "Satellites",
+    "website": "https://polarixuit.no",
+    "norstec_member": true,
+    "incubator": false
+  },
+  {
+    "id": "portal-space",
+    "name": "Portal Space",
+    "university_abbr": "OsloMet",
+    "city": "Oslo",
+    "country": "Norway",
+    "specialization": "Rocketeering",
+    "website": "https://www.portalspace.no",
+    "norstec_member": true,
+    "incubator": true
+  },
+  {
+    "id": "propulse-ntnu",
+    "name": "Propulse NTNU",
+    "university_abbr": "NTNU",
+    "city": "Trondheim",
+    "country": "Norway",
+    "specialization": "Rocketeering",
+    "website": "https://www.propulse.no",
+    "norstec_member": true,
+    "incubator": false
+  },
+  {
+    "id": "uis-aerospace",
+    "name": "UIS Aerospace",
+    "university_abbr": "UiS",
+    "city": "Stavanger",
+    "country": "Norway",
+    "specialization": "Satellites & Rocketeering",
+    "website": "https://www.uisaerospace.no",
+    "norstec_member": true,
+    "incubator": false
+  },
+  {
+    "id": "usn-horizon",
+    "name": "USN Horizon",
+    "university_abbr": "USN",
+    "city": "Kongsberg",
+    "country": "Norway",
+    "specialization": "Rocketeering",
+    "website": "https://usnhorizon.no",
+    "norstec_member": true,
+    "incubator": false
+  }
+]
