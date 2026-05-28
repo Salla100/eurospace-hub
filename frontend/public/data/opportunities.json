@@ -19,17 +19,30 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["concurrent-design", "mission-design", "CDF", "COMET", "teamwork"]
+    "tags": [
+      "concurrent-design",
+      "mission-design",
+      "CDF",
+      "COMET",
+      "teamwork"
+    ]
   },
   {
     "id": "esa-cubesat-concurrent-engineering-workshop",
@@ -51,17 +64,29 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["CubeSat", "concurrent-engineering", "AIV", "smallsat"]
+    "tags": [
+      "CubeSat",
+      "concurrent-engineering",
+      "AIV",
+      "smallsat"
+    ]
   },
   {
     "id": "esa-spacecraft-testing-workshop",
@@ -83,17 +108,29 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["spacecraft-testing", "cleanroom", "environmental-testing", "hardware"]
+    "tags": [
+      "spacecraft-testing",
+      "cleanroom",
+      "environmental-testing",
+      "hardware"
+    ]
   },
   {
     "id": "esa-space-debris-training-course",
@@ -115,17 +152,28 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["space-debris", "mitigation", "constellations", "sustainability"]
+    "tags": [
+      "space-debris",
+      "mitigation",
+      "constellations",
+      "sustainability"
+    ]
   },
   {
     "id": "esa-robotics-workshop-exomy",
@@ -147,17 +195,32 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["robotics", "ROS2", "Python", "ML", "ExoMy", "rover", "ESTEC"]
+    "tags": [
+      "robotics",
+      "ROS2",
+      "Python",
+      "ML",
+      "ExoMy",
+      "rover",
+      "ESTEC"
+    ]
   },
   {
     "id": "esa-earth-observation-remote-sensing-workshop",
@@ -179,17 +242,29 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["earth-observation", "remote-sensing", "Sentinel", "Copernicus", "Galileo"]
+    "tags": [
+      "earth-observation",
+      "remote-sensing",
+      "Sentinel",
+      "Copernicus",
+      "Galileo"
+    ]
   },
   {
     "id": "esa-navigation-galileo-training-course",
@@ -211,17 +286,29 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["GNSS", "Galileo", "navigation", "PNT", "LEO"]
+    "tags": [
+      "GNSS",
+      "Galileo",
+      "navigation",
+      "PNT",
+      "LEO"
+    ]
   },
   {
     "id": "esa-satellite-communications-training-course",
@@ -243,17 +330,30 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["satcom", "communications", "antennas", "ESEC-Redu", "ground-station"]
+    "tags": [
+      "satcom",
+      "communications",
+      "antennas",
+      "ESEC-Redu",
+      "ground-station"
+    ]
   },
   {
     "id": "esa-product-assurance-course",
@@ -275,17 +375,28 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["MSc", "PhD"],
-    "eligibility_fields": ["engineering"],
+    "eligibility_level": [
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["product-assurance", "ECSS", "quality", "mission-success", "standards"]
+    "tags": [
+      "product-assurance",
+      "ECSS",
+      "quality",
+      "mission-success",
+      "standards"
+    ]
   },
   {
     "id": "esa-space-systems-engineering-course",
@@ -307,17 +418,28 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["systems-engineering", "requirements", "architecture", "trade-off"]
+    "tags": [
+      "systems-engineering",
+      "requirements",
+      "architecture",
+      "trade-off"
+    ]
   },
   {
     "id": "esa-space-weather-training-course",
@@ -339,17 +461,30 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["space-weather", "solar", "forecasting", "ESEC-Redu", "Brussels"]
+    "tags": [
+      "space-weather",
+      "solar",
+      "forecasting",
+      "ESEC-Redu",
+      "Brussels"
+    ]
   },
   {
     "id": "esa-space-law-training-course",
@@ -371,17 +506,29 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["any"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "any"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["space-law", "Outer-Space-Treaty", "policy", "legal", "international"]
+    "tags": [
+      "space-law",
+      "Outer-Space-Treaty",
+      "policy",
+      "legal",
+      "international"
+    ]
   },
   {
     "id": "esa-space-standards-ecss-course",
@@ -403,17 +550,29 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["ECSS", "standards", "quality", "space-engineering"]
+    "tags": [
+      "ECSS",
+      "standards",
+      "quality",
+      "space-engineering"
+    ]
   },
   {
     "id": "esa-technology-transfer-workshop",
@@ -435,17 +594,29 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["any"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "any"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["technology-transfer", "spinoff", "innovation", "business", "entrepreneurship"]
+    "tags": [
+      "technology-transfer",
+      "spinoff",
+      "innovation",
+      "business",
+      "entrepreneurship"
+    ]
   },
   {
     "id": "esa-life-support-systems-workshop",
@@ -467,17 +638,30 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["life-support", "MELiSSA", "BLSS", "bioregenerative", "sustainability"]
+    "tags": [
+      "life-support",
+      "MELiSSA",
+      "BLSS",
+      "bioregenerative",
+      "sustainability"
+    ]
   },
   {
     "id": "esa-access-to-space-training-course",
@@ -499,17 +683,29 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["any"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "any"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["launchers", "Ariane", "Vega", "space-transportation", "launch-access"]
+    "tags": [
+      "launchers",
+      "Ariane",
+      "Vega",
+      "space-transportation",
+      "launch-access"
+    ]
   },
   {
     "id": "esa-space-policy-in-action-course",
@@ -531,17 +727,29 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["any"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "any"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["space-policy", "ESA", "governance", "Ministerial", "diplomacy"]
+    "tags": [
+      "space-policy",
+      "ESA",
+      "governance",
+      "Ministerial",
+      "diplomacy"
+    ]
   },
   {
     "id": "esa-human-space-physiology-course",
@@ -563,17 +771,31 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["science", "engineering"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "science",
+      "engineering"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["space-medicine", "physiology", "microgravity", "ISS", "astronaut", "life-sciences"]
+    "tags": [
+      "space-medicine",
+      "physiology",
+      "microgravity",
+      "ISS",
+      "astronaut",
+      "life-sciences"
+    ]
   },
   {
     "id": "esa-cubesat-summer-school",
@@ -595,17 +817,30 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["CubeSat", "hardware", "ESAT", "summer-school", "hands-on"]
+    "tags": [
+      "CubeSat",
+      "hardware",
+      "ESAT",
+      "summer-school",
+      "hands-on"
+    ]
   },
   {
     "id": "esa-gravity-research-summer-school",
@@ -627,17 +862,29 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["microgravity", "ELGRA", "experiment-design", "summer-school", "parabolic-flight"]
+    "tags": [
+      "microgravity",
+      "ELGRA",
+      "experiment-design",
+      "summer-school",
+      "parabolic-flight"
+    ]
   },
   {
     "id": "esa-spacecraft-communications-ladybird",
@@ -659,17 +906,30 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["spacecraft-comms", "ESOC", "simulation", "radio", "telemetry"]
+    "tags": [
+      "spacecraft-comms",
+      "ESOC",
+      "simulation",
+      "radio",
+      "telemetry"
+    ]
   },
   {
     "id": "esa-space-security-cybersecurity-course",
@@ -691,17 +951,30 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["cybersecurity", "space-security", "ESEC-Redu", "threat", "defence"]
+    "tags": [
+      "cybersecurity",
+      "space-security",
+      "ESEC-Redu",
+      "threat",
+      "defence"
+    ]
   },
   {
     "id": "esa-rocketry-training-programme",
@@ -723,17 +996,28 @@
     "funding_available": true,
     "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
     "funding_amount_eur": 350,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering"
+    ],
     "eligibility_countries": "ESA Member States and Cooperating States",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["rocketry", "student-teams", "EuRoC", "propulsion"]
+    "tags": [
+      "rocketry",
+      "student-teams",
+      "EuRoC",
+      "propulsion"
+    ]
   },
   {
     "id": "rexus-bexus",
@@ -755,17 +1039,31 @@
     "funding_available": true,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States + Canada/Latvia/Lithuania/Slovakia/Slovenia",
     "team_based": true,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://rexusbexus.net",
     "scrape_selector": null,
-    "tags": ["sounding-rocket", "balloon", "microgravity", "REXUS", "BEXUS", "experiment"]
+    "tags": [
+      "sounding-rocket",
+      "balloon",
+      "microgravity",
+      "REXUS",
+      "BEXUS",
+      "experiment"
+    ]
   },
   {
     "id": "fly-your-satellite",
@@ -787,17 +1085,29 @@
     "funding_available": true,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States + Canada/Latvia/Lithuania/Slovakia/Slovenia",
     "team_based": true,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["CubeSat", "launch", "satellite", "multi-year", "FYS"]
+    "tags": [
+      "CubeSat",
+      "launch",
+      "satellite",
+      "multi-year",
+      "FYS"
+    ]
   },
   {
     "id": "fly-your-satellite-design-booster",
@@ -819,17 +1129,30 @@
     "funding_available": true,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States + Canada/Latvia/Lithuania/Slovakia/Slovenia",
     "team_based": true,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["CubeSat", "design", "satellite", "FYS", "mentoring"]
+    "tags": [
+      "CubeSat",
+      "design",
+      "satellite",
+      "FYS",
+      "mentoring"
+    ]
   },
   {
     "id": "esa-test-opportunities",
@@ -851,17 +1174,30 @@
     "funding_available": true,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering"
+    ],
     "eligibility_countries": "ESA Member States + Canada/Latvia/Lithuania/Slovakia/Slovenia",
     "team_based": true,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["hardware-testing", "TVAC", "vibration", "EMC", "ESTEC", "facilities"]
+    "tags": [
+      "hardware-testing",
+      "TVAC",
+      "vibration",
+      "EMC",
+      "ESTEC",
+      "facilities"
+    ]
   },
   {
     "id": "esa-academy-experiments-programme",
@@ -883,17 +1219,30 @@
     "funding_available": true,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States + Canada/Latvia/Lithuania/Slovakia/Slovenia",
     "team_based": true,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
-    "tags": ["parabolic-flight", "microgravity", "robotics", "experiment", "ESA-platforms"]
+    "tags": [
+      "parabolic-flight",
+      "microgravity",
+      "robotics",
+      "experiment",
+      "ESA-platforms"
+    ]
   },
   {
     "id": "esa-academy-academic-scholarship",
@@ -915,17 +1264,29 @@
     "funding_available": true,
     "funding_details": "Full MSc tuition fees covered",
     "funding_amount_eur": null,
-    "eligibility_level": ["MSc"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "MSc"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States and Associate Members",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/Engagement/Academic_Scholarship_programme",
     "scrape_selector": null,
-    "tags": ["scholarship", "tuition", "MSc", "Bologna", "space-masters", "on-hold"]
+    "tags": [
+      "scholarship",
+      "tuition",
+      "MSc",
+      "Bologna",
+      "space-masters",
+      "on-hold"
+    ]
   },
   {
     "id": "esa-academy-short-course-scholarship",
@@ -947,17 +1308,31 @@
     "funding_available": true,
     "funding_details": "Covers course fees for external summer schools",
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States + Canada",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/Engagement/Short_Course_Scholarship_programme",
     "scrape_selector": null,
-    "tags": ["scholarship", "Alpbach", "ISU", "VKI", "short-course", "summer-school"]
+    "tags": [
+      "scholarship",
+      "Alpbach",
+      "ISU",
+      "VKI",
+      "short-course",
+      "summer-school"
+    ]
   },
   {
     "id": "esa-conference-student-sponsorship",
@@ -979,17 +1354,32 @@
     "funding_available": true,
     "funding_details": "Up to €750 travel + accommodation + registration",
     "funding_amount_eur": 750,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["any"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "any"
+    ],
     "eligibility_countries": "ESA Member States",
     "team_based": false,
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/Engagement/Conference_Student_Sponsorship_programme",
     "scrape_selector": null,
-    "tags": ["conference", "IAC", "COSPAR", "EUCASS", "EPSC", "SGC", "sponsorship", "travel-grant"]
+    "tags": [
+      "conference",
+      "IAC",
+      "COSPAR",
+      "EUCASS",
+      "EPSC",
+      "SGC",
+      "sponsorship",
+      "travel-grant"
+    ]
   },
   {
     "id": "esa-euroc-team-sponsorship",
@@ -1011,17 +1401,29 @@
     "funding_available": true,
     "funding_details": "Up to €1,000 travel + accommodation",
     "funding_amount_eur": 1000,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering"
+    ],
     "eligibility_countries": "ESA Member States",
     "team_based": true,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://euroc.pt",
     "scrape_selector": null,
-    "tags": ["EuRoC", "rocketry", "competition", "travel-grant", "sponsorship"]
+    "tags": [
+      "EuRoC",
+      "rocketry",
+      "competition",
+      "travel-grant",
+      "sponsorship"
+    ]
   },
   {
     "id": "euroc",
@@ -1043,17 +1445,31 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering"
+    ],
     "eligibility_countries": "Europe (open international)",
     "team_based": true,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://euroc.pt/competition-rules/",
     "scrape_selector": null,
-    "tags": ["rocketry", "competition", "EuRoC", "hybrid", "solid", "liquid", "Portugal"]
+    "tags": [
+      "rocketry",
+      "competition",
+      "EuRoC",
+      "hybrid",
+      "solid",
+      "liquid",
+      "Portugal"
+    ]
   },
   {
     "id": "erc-european-rover-challenge",
@@ -1075,17 +1491,30 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering"
+    ],
     "eligibility_countries": "International (Europe-focused)",
     "team_based": true,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://roverchallenge.eu/competitor-zone/",
     "scrape_selector": null,
-    "tags": ["rover", "Mars", "ERC", "competition", "robotics", "Poland"]
+    "tags": [
+      "rover",
+      "Mars",
+      "ERC",
+      "competition",
+      "robotics",
+      "Poland"
+    ]
   },
   {
     "id": "student-aerospace-challenge",
@@ -1107,17 +1536,31 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science", "business"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science",
+      "business"
+    ],
     "eligibility_countries": "Europe",
     "team_based": true,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/Engagement",
     "scrape_selector": null,
-    "tags": ["design-competition", "suborbital", "ArianeGroup", "ESA", "interdisciplinary"]
+    "tags": [
+      "design-competition",
+      "suborbital",
+      "ArianeGroup",
+      "ESA",
+      "interdisciplinary"
+    ]
   },
   {
     "id": "cansat",
@@ -1139,17 +1582,29 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "25+ countries (ESA member + others)",
     "team_based": true,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education/CanSat",
     "scrape_selector": null,
-    "tags": ["CanSat", "high-school", "secondary", "ESA", "satellite", "ESERO"]
+    "tags": [
+      "CanSat",
+      "high-school",
+      "secondary",
+      "ESA",
+      "satellite",
+      "ESERO"
+    ]
   },
   {
     "id": "alpbach-summer-school",
@@ -1171,17 +1626,30 @@
     "funding_available": true,
     "funding_details": "ESA contributes €500 of €950 fee; national agencies often cover remainder",
     "funding_amount_eur": 500,
-    "eligibility_level": ["MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "ESA Member States",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.summerschoolalpbach.at",
     "scrape_selector": null,
-    "tags": ["Alpbach", "summer-school", "mission-design", "Austria", "prestigious", "interdisciplinary"]
+    "tags": [
+      "Alpbach",
+      "summer-school",
+      "mission-design",
+      "Austria",
+      "prestigious",
+      "interdisciplinary"
+    ]
   },
   {
     "id": "isu-space-studies-programme",
@@ -1203,17 +1671,30 @@
     "funding_available": true,
     "funding_details": "ESA Academy Short Course Scholarship available (partial)",
     "funding_amount_eur": null,
-    "eligibility_level": ["MSc", "PhD"],
-    "eligibility_fields": ["any"],
+    "eligibility_level": [
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "any"
+    ],
     "eligibility_countries": "International",
     "team_based": false,
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.isunet.edu",
     "scrape_selector": null,
-    "tags": ["ISU", "SSP", "interdisciplinary", "international", "summer-school", "management", "policy"]
+    "tags": [
+      "ISU",
+      "SSP",
+      "interdisciplinary",
+      "international",
+      "summer-school",
+      "management",
+      "policy"
+    ]
   },
   {
     "id": "vki-lecture-series",
@@ -1235,17 +1716,30 @@
     "funding_available": true,
     "funding_details": "ESA Academy Short Course Scholarship eligible",
     "funding_amount_eur": null,
-    "eligibility_level": ["MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "International",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.vki.ac.be",
     "scrape_selector": null,
-    "tags": ["VKI", "aerodynamics", "fluid-dynamics", "propulsion", "Belgium", "short-course"]
+    "tags": [
+      "VKI",
+      "aerodynamics",
+      "fluid-dynamics",
+      "propulsion",
+      "Belgium",
+      "short-course"
+    ]
   },
   {
     "id": "dlr-summer-school-space-propulsion",
@@ -1267,17 +1761,30 @@
     "funding_available": true,
     "funding_details": "Fully funded by DLR (travel + accommodation)",
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc"],
-    "eligibility_fields": ["engineering"],
+    "eligibility_level": [
+      "BSc",
+      "MSc"
+    ],
+    "eligibility_fields": [
+      "engineering"
+    ],
     "eligibility_countries": "International (Europe-focused)",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.dlr.de/en/careers-and-education/research-and-promotion/dlr_summer_school-on-space-propulsion",
     "scrape_selector": null,
-    "tags": ["DLR", "propulsion", "summer-school", "Germany", "funded", "chemical", "electric"]
+    "tags": [
+      "DLR",
+      "propulsion",
+      "summer-school",
+      "Germany",
+      "funded",
+      "chemical",
+      "electric"
+    ]
   },
   {
     "id": "dlr-international-space-weather-camp",
@@ -1299,17 +1806,31 @@
     "funding_available": true,
     "funding_details": "Fully funded by DLR (travel + accommodation)",
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc"],
-    "eligibility_fields": ["science", "engineering"],
+    "eligibility_level": [
+      "BSc",
+      "MSc"
+    ],
+    "eligibility_fields": [
+      "science",
+      "engineering"
+    ],
     "eligibility_countries": "Germany (DLR) + USA (UAH)",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.dlr.de/en/careers-and-education",
     "scrape_selector": null,
-    "tags": ["DLR", "space-weather", "Germany", "USA", "bilateral", "funded", "physics"]
+    "tags": [
+      "DLR",
+      "space-weather",
+      "Germany",
+      "USA",
+      "bilateral",
+      "funded",
+      "physics"
+    ]
   },
   {
     "id": "pina-pico-nano-satellite-workshop",
@@ -1331,17 +1852,31 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "International",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.informatik.uni-wuerzburg.de/en/esseo/",
     "scrape_selector": null,
-    "tags": ["PiNa", "nanosatellite", "picosatellite", "CubeSat", "workshop", "biennial"]
+    "tags": [
+      "PiNa",
+      "nanosatellite",
+      "picosatellite",
+      "CubeSat",
+      "workshop",
+      "biennial"
+    ]
   },
   {
     "id": "bvsr-conference",
@@ -1363,17 +1898,30 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "Germany (open to guests)",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://bvsr.space",
     "scrape_selector": null,
-    "tags": ["BVSR", "conference", "Germany", "student-clubs", "networking"]
+    "tags": [
+      "BVSR",
+      "conference",
+      "Germany",
+      "student-clubs",
+      "networking"
+    ]
   },
   {
     "id": "norstec-summit",
@@ -1395,17 +1943,32 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science", "business"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science",
+      "business"
+    ],
     "eligibility_countries": "Norway (open internationally)",
     "team_based": false,
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://norstec.no/summit",
     "scrape_selector": null,
-    "tags": ["NORSTEC", "summit", "Norway", "conference", "networking", "industry"]
+    "tags": [
+      "NORSTEC",
+      "summit",
+      "Norway",
+      "conference",
+      "networking",
+      "industry"
+    ]
   },
   {
     "id": "iaa-small-satellite-symposium",
@@ -1427,17 +1990,32 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "International",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.dlr.de",
     "scrape_selector": null,
-    "tags": ["IAA", "small-satellite", "symposium", "DLR", "Berlin", "biennial", "conference"]
+    "tags": [
+      "IAA",
+      "small-satellite",
+      "symposium",
+      "DLR",
+      "Berlin",
+      "biennial",
+      "conference"
+    ]
   },
   {
     "id": "esa-symposium-rocket-balloon-programmes",
@@ -1459,17 +2037,32 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "International",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.esa.int/Education",
     "scrape_selector": null,
-    "tags": ["ESA", "sounding-rocket", "balloon", "symposium", "Norway", "Tromsø", "biennial"]
+    "tags": [
+      "ESA",
+      "sounding-rocket",
+      "balloon",
+      "symposium",
+      "Norway",
+      "Tromsø",
+      "biennial"
+    ]
   },
   {
     "id": "actinspace",
@@ -1491,17 +2084,31 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["any"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "any"
+    ],
     "eligibility_countries": "International",
     "team_based": true,
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://actinspace.org",
     "scrape_selector": null,
-    "tags": ["hackathon", "CNES", "ESA", "business", "innovation", "space-assets", "Bordeaux"]
+    "tags": [
+      "hackathon",
+      "CNES",
+      "ESA",
+      "business",
+      "innovation",
+      "space-assets",
+      "Bordeaux"
+    ]
   },
   {
     "id": "nasa-space-apps-challenge",
@@ -1523,17 +2130,30 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["any"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "any"
+    ],
     "eligibility_countries": "International",
     "team_based": true,
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.spaceappschallenge.org",
     "scrape_selector": null,
-    "tags": ["NASA", "hackathon", "open-data", "Oslo", "global", "Space-Apps"]
+    "tags": [
+      "NASA",
+      "hackathon",
+      "open-data",
+      "Oslo",
+      "global",
+      "Space-Apps"
+    ]
   },
   {
     "id": "tekna-space-hackathon-bodo",
@@ -1555,17 +2175,32 @@
     "funding_available": true,
     "funding_details": "Travel + accommodation up to NOK 5,000 (≈ €430). Prize: KSAT summer internship.",
     "funding_amount_eur": 430,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "Norway (open internationally)",
     "team_based": true,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.tekna.no",
     "scrape_selector": null,
-    "tags": ["hackathon", "Bodø", "Norway", "space-debris", "KSAT", "internship", "prize"]
+    "tags": [
+      "hackathon",
+      "Bodø",
+      "Norway",
+      "space-debris",
+      "KSAT",
+      "internship",
+      "prize"
+    ]
   },
   {
     "id": "andoya-space-hackathon",
@@ -1587,17 +2222,32 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "Norway (open internationally)",
     "team_based": true,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.tekna.no",
     "scrape_selector": null,
-    "tags": ["hackathon", "Andøya", "Norway", "satellite-data", "Arctic", "KSAT", "ESA-Phi-Lab"]
+    "tags": [
+      "hackathon",
+      "Andøya",
+      "Norway",
+      "satellite-data",
+      "Arctic",
+      "KSAT",
+      "ESA-Phi-Lab"
+    ]
   },
   {
     "id": "cassini-hackathon",
@@ -1619,17 +2269,30 @@
     "funding_available": true,
     "funding_details": "Top 3 teams receive 6-month expert mentoring programme",
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["any"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "any"
+    ],
     "eligibility_countries": "European Union member states",
     "team_based": true,
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.cassini.eu/hackathons",
     "scrape_selector": null,
-    "tags": ["CASSINI", "EU", "hackathon", "mentoring", "NewSpace", "entrepreneurship"]
+    "tags": [
+      "CASSINI",
+      "EU",
+      "hackathon",
+      "mentoring",
+      "NewSpace",
+      "entrepreneurship"
+    ]
   },
   {
     "id": "starlab-space-mission-hackathon",
@@ -1651,17 +2314,31 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "Europe (open internationally)",
     "team_based": true,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.news.uzh.ch",
     "scrape_selector": null,
-    "tags": ["hackathon", "Zurich", "Switzerland", "BVSR", "ESA-BIC", "mission-design"]
+    "tags": [
+      "hackathon",
+      "Zurich",
+      "Switzerland",
+      "BVSR",
+      "ESA-BIC",
+      "mission-design"
+    ]
   },
   {
     "id": "universeh-space-hackathon",
@@ -1683,17 +2360,30 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["any"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "any"
+    ],
     "eligibility_countries": "UNIVERSEH alliance countries (France, Germany, Sweden, Poland, Romania)",
     "team_based": true,
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://universeh.eu",
     "scrape_selector": null,
-    "tags": ["UNIVERSEH", "hackathon", "ecosystem", "biosphere", "alliance", "interdisciplinary"]
+    "tags": [
+      "UNIVERSEH",
+      "hackathon",
+      "ecosystem",
+      "biosphere",
+      "alliance",
+      "interdisciplinary"
+    ]
   },
   {
     "id": "copernicus-hackathon",
@@ -1715,17 +2405,31 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["any"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "any"
+    ],
     "eligibility_countries": "European Union",
     "team_based": true,
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.copernicus.eu",
     "scrape_selector": null,
-    "tags": ["Copernicus", "earth-observation", "hackathon", "ESA", "EU", "environmental", "Sentinel"]
+    "tags": [
+      "Copernicus",
+      "earth-observation",
+      "hackathon",
+      "ESA",
+      "EU",
+      "environmental",
+      "Sentinel"
+    ]
   },
   {
     "id": "startech-bip",
@@ -1747,17 +2451,30 @@
     "funding_available": true,
     "funding_details": "Erasmus+ mobility grant (amount depends on country pair)",
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc"],
-    "eligibility_fields": ["any"],
+    "eligibility_level": [
+      "BSc",
+      "MSc"
+    ],
+    "eligibility_fields": [
+      "any"
+    ],
     "eligibility_countries": "Erasmus+ eligible countries",
     "team_based": false,
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://web.uniroma2.it",
     "scrape_selector": null,
-    "tags": ["BIP", "Erasmus", "entrepreneurship", "startup", "space-business", "Rome", "blended"]
+    "tags": [
+      "BIP",
+      "Erasmus",
+      "entrepreneurship",
+      "startup",
+      "space-business",
+      "Rome",
+      "blended"
+    ]
   },
   {
     "id": "sea-eu-bip-bodo",
@@ -1779,17 +2496,31 @@
     "funding_available": true,
     "funding_details": "Erasmus+ mobility grant",
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc"],
-    "eligibility_fields": ["any"],
+    "eligibility_level": [
+      "BSc",
+      "MSc"
+    ],
+    "eligibility_fields": [
+      "any"
+    ],
     "eligibility_countries": "Erasmus+ eligible countries",
     "team_based": false,
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://sea-eu.org/bips/",
     "scrape_selector": null,
-    "tags": ["BIP", "Erasmus", "Bodø", "Norway", "satellite-data", "marine", "SEA-EU", "blended"]
+    "tags": [
+      "BIP",
+      "Erasmus",
+      "Bodø",
+      "Norway",
+      "satellite-data",
+      "marine",
+      "SEA-EU",
+      "blended"
+    ]
   },
   {
     "id": "enhance-alliance-bips",
@@ -1811,17 +2542,29 @@
     "funding_available": true,
     "funding_details": "Erasmus+ mobility grant",
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc"],
-    "eligibility_fields": ["any"],
+    "eligibility_level": [
+      "BSc",
+      "MSc"
+    ],
+    "eligibility_fields": [
+      "any"
+    ],
     "eligibility_countries": "Erasmus+ eligible countries",
     "team_based": false,
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://enhanceuniversity.eu",
     "scrape_selector": null,
-    "tags": ["BIP", "Erasmus", "ENHANCE", "alliance", "blended", "Europe"]
+    "tags": [
+      "BIP",
+      "Erasmus",
+      "ENHANCE",
+      "alliance",
+      "blended",
+      "Europe"
+    ]
   },
   {
     "id": "universeh-bips",
@@ -1843,17 +2586,30 @@
     "funding_available": true,
     "funding_details": "Erasmus+ mobility grant",
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc"],
-    "eligibility_fields": ["any"],
+    "eligibility_level": [
+      "BSc",
+      "MSc"
+    ],
+    "eligibility_fields": [
+      "any"
+    ],
     "eligibility_countries": "Erasmus+ eligible countries",
     "team_based": false,
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://universeh.eu",
     "scrape_selector": null,
-    "tags": ["BIP", "Erasmus", "UNIVERSEH", "alliance", "space", "blended", "multinational"]
+    "tags": [
+      "BIP",
+      "Erasmus",
+      "UNIVERSEH",
+      "alliance",
+      "space",
+      "blended",
+      "multinational"
+    ]
   },
   {
     "id": "norstec",
@@ -1875,17 +2631,32 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "Norway",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://norstec.no",
     "scrape_selector": null,
-    "tags": ["NORSTEC", "Norway", "network", "umbrella", "incubator", "rideshare", "podcast"]
+    "tags": [
+      "NORSTEC",
+      "Norway",
+      "network",
+      "umbrella",
+      "incubator",
+      "rideshare",
+      "podcast"
+    ]
   },
   {
     "id": "bvsr",
@@ -1907,17 +2678,32 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "Germany",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://bvsr.space",
     "scrape_selector": null,
-    "tags": ["BVSR", "Germany", "network", "umbrella", "clubs", "advocacy", "ODIN"]
+    "tags": [
+      "BVSR",
+      "Germany",
+      "network",
+      "umbrella",
+      "clubs",
+      "advocacy",
+      "ODIN"
+    ]
   },
   {
     "id": "sgac",
@@ -1939,17 +2725,33 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["any"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "any"
+    ],
     "eligibility_countries": "International",
     "team_based": false,
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://spacegeneration.org",
     "scrape_selector": null,
-    "tags": ["SGAC", "global", "network", "IAC", "SGC", "advocacy", "UN", "ESA", "young-professionals"]
+    "tags": [
+      "SGAC",
+      "global",
+      "network",
+      "IAC",
+      "SGC",
+      "advocacy",
+      "UN",
+      "ESA",
+      "young-professionals"
+    ]
   },
   {
     "id": "euroavia",
@@ -1971,17 +2773,32 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["engineering", "science"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
     "eligibility_countries": "Europe",
     "team_based": false,
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://euroavia.eu",
     "scrape_selector": null,
-    "tags": ["EUROAVIA", "Europe", "network", "aerospace", "students", "workshops", "study-trips"]
+    "tags": [
+      "EUROAVIA",
+      "Europe",
+      "network",
+      "aerospace",
+      "students",
+      "workshops",
+      "study-trips"
+    ]
   },
   {
     "id": "seds-europe",
@@ -2003,17 +2820,31 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["any"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "any"
+    ],
     "eligibility_countries": "Europe",
     "team_based": false,
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://seds.org",
     "scrape_selector": null,
-    "tags": ["SEDS", "UKSEDS", "Europe", "network", "students", "global", "grassroots"]
+    "tags": [
+      "SEDS",
+      "UKSEDS",
+      "Europe",
+      "network",
+      "students",
+      "global",
+      "grassroots"
+    ]
   },
   {
     "id": "wia-europe",
@@ -2035,16 +2866,30 @@
     "funding_available": false,
     "funding_details": null,
     "funding_amount_eur": null,
-    "eligibility_level": ["BSc", "MSc", "PhD"],
-    "eligibility_fields": ["any"],
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "any"
+    ],
     "eligibility_countries": "Europe",
     "team_based": false,
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2025-11-01",
+    "last_verified": "2026-05-28",
     "scrape_url": "https://www.wia-europe.org",
     "scrape_selector": null,
-    "tags": ["WIA-E", "women", "aerospace", "mentoring", "networking", "diversity", "career"]
+    "tags": [
+      "WIA-E",
+      "women",
+      "aerospace",
+      "mentoring",
+      "networking",
+      "diversity",
+      "career"
+    ]
   }
 ]
