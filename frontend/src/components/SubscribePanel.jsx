@@ -14,6 +14,7 @@ const CATEGORIES = [
   { id: 'workshop_external', label: 'External Workshops' },
   { id: 'national_network', label: 'Student Networks' },
   { id: 'conference_sponsorship', label: 'Conferences' },
+  { id: 'space_agency_internship', label: 'Internships & Traineeships' },
 ];
 
 export default function SubscribePanel() {

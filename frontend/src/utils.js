@@ -58,6 +58,7 @@ export function categoryLabel(cat) {
     bip: 'BIP',
     course_online: 'Online Course',
     workshop_external: 'Workshop',
+    space_agency_internship: 'Internship',
   };
   return map[cat] || (cat || '').replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 }
@@ -79,6 +80,7 @@ export function categoryColor(cat) {
     bip: 'bg-cyan-900/60 text-cyan-300 border border-cyan-700/40',
     course_online: 'bg-slate-800/60 text-slate-300 border border-slate-700/40',
     workshop_external: 'bg-violet-900/60 text-violet-300 border border-violet-700/40',
+    space_agency_internship: 'bg-purple-900/60 text-purple-300 border border-purple-700/40',
   };
   return map[cat] || 'bg-slate-800/60 text-slate-300 border border-slate-700/40';
 }
@@ -99,4 +101,5 @@ export const CATEGORY_GROUPS = {
   Networks: ['national_network'],
   BIPs: ['bip'],
   'Conference': ['conference_sponsorship'],
+  'Internships': ['space_agency_internship'],
 };

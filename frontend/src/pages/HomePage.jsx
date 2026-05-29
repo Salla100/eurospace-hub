@@ -255,6 +255,37 @@ export default function HomePage() {
         <TeamSection bvsr={bvsr} norstec={norstec} />
       </div>
 
+      {/* Internships & Traineeships */}
+      {(filters.group === 'All' || filters.group === 'Internships') && (
+        <section id="internships" className="py-14 border-t border-space-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="flex flex-col sm:flex-row sm:items-end gap-4 mb-8">
+              <div>
+                <h2 className="text-2xl font-extrabold text-space-text">Agency Internships & Traineeships</h2>
+                <p className="text-space-muted text-sm mt-1">
+                  Paid placements at ESA, EUMETSAT, EUSPA, DLR, CNES and other European space agencies
+                </p>
+              </div>
+              <a
+                href="https://jobs.esa.int/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="sm:ml-auto flex items-center gap-1.5 text-space-accent text-sm hover:underline"
+              >
+                ESA Jobs Portal <ExternalLink size={12} />
+              </a>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {filtered
+                .filter((o) => o.category === 'space_agency_internship')
+                .map((opp) => (
+                  <OpportunityCard key={opp.id} opp={opp} onClick={setSelectedOpp} />
+                ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Subscribe */}
       <section id="subscribe" className="py-14 border-t border-space-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">

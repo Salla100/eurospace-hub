@@ -8,6 +8,7 @@ const NAV = [
   { href: '#competitions', label: 'Competitions' },
   { href: '#networks', label: 'Networks' },
   { href: '#teams', label: 'Teams' },
+  { href: '#internships', label: 'Internships' },
   { href: '#subscribe', label: 'Subscribe' },
 ];
 
