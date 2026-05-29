@@ -1,5 +1,5 @@
-import { X, ExternalLink, Copy, MapPin, Clock, Globe, Tag, CheckCircle } from 'lucide-react';
-import { categoryLabel, categoryColor, deadlineLabel, deadlineColorHex, formatDate, levelPill } from '../utils.js';
+import { X, ExternalLink, Copy, MapPin, Clock, Globe, Tag, CheckCircle, Lock } from 'lucide-react';
+import { categoryLabel, categoryColor, deadlineLabel, deadlineColorHex, formatDate, levelPill, daysUntil } from '../utils.js';
 
 function Section({ title, children }) {
   return (
@@ -27,6 +27,7 @@ export default function OpportunityModal({ opp, onClose }) {
 
   const dlColor = deadlineColorHex(opp.deadline);
   const dlLabel = deadlineLabel(opp.deadline);
+  const isExpired = opp.deadline && daysUntil(opp.deadline) < 0;
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.origin + '/?opp=' + opp.id).catch(() => {});
@@ -75,7 +76,14 @@ export default function OpportunityModal({ opp, onClose }) {
 
         {/* Body */}
         <div className="px-6 py-5">
-          {/* Status banner */}
+          {/* Status banners */}
+          {isExpired && (
+            <div className="mb-5 rounded-lg bg-slate-800/60 border border-slate-700/60 p-4 text-slate-400 text-sm flex items-center gap-2">
+              <Lock size={14} className="shrink-0" />
+              The application deadline for this opportunity has <strong className="text-slate-300">passed</strong>.
+              {opp.deadline_recurring && ' This is a recurring programme — check back for next year\'s edition.'}
+            </div>
+          )}
           {opp.status === 'on_hold' && (
             <div className="mb-5 rounded-lg bg-amber-900/30 border border-amber-700/40 p-4 text-amber-300 text-sm">
               ⏸ This programme is currently <strong>on hold</strong> and not accepting applications.
@@ -131,7 +139,7 @@ export default function OpportunityModal({ opp, onClose }) {
             <Row label="Deadline Notes" value={opp.deadline_notes} />
             <Row label="Event Date" value={opp.event_date ? formatDate(opp.event_date) : opp.event_month_typical} />
             <Row label="Recurring" value={opp.deadline_recurring ? 'Yes — annual / recurring' : null} />
-            <Row label="Last Verified" value={opp.last_verified ? formatDate(opp.last_verified) : null} />
+            <Row label="Last Checked" value={opp.last_verified ? formatDate(opp.last_verified) : null} />
           </Section>
 
           {/* Eligibility */}
@@ -195,10 +203,14 @@ export default function OpportunityModal({ opp, onClose }) {
             href={opp.application_url || opp.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-space-accent text-white font-semibold text-sm hover:bg-blue-500 transition-colors"
+            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm transition-colors ${
+              isExpired
+                ? 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                : 'bg-space-accent text-white hover:bg-blue-500'
+            }`}
           >
             <Globe size={14} />
-            Open Official Page
+            {isExpired ? 'View Programme' : 'Open Official Page'}
             <ExternalLink size={12} />
           </a>
           {opp.application_url && opp.application_url !== opp.url && (

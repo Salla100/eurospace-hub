@@ -410,6 +410,7 @@ async function applyDeadlineDates(opp, dates, sourceUrl, { saveOpportunities, lo
   }
 
   opp.last_verified = new Date().toISOString().slice(0, 10);
+  await saveOpportunities();
   return { changed: false, old_deadline: opp.deadline, new_deadline: opp.deadline };
 }
 

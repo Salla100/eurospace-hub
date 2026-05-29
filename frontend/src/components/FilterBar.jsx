@@ -69,7 +69,7 @@ export default function FilterBar({ filters, setFilters, total, filtered }) {
             { key: 'funded', label: '💰 Funded Only', val: funded },
             { key: 'teamBased', label: '👥 Team-Based', val: teamBased },
             { key: 'openAll', label: '🌍 Any Field', val: openAll },
-            { key: 'openNow', label: '⚠️ Has Deadline', val: openNow },
+            { key: 'openNow', label: '🟢 Open Now', val: openNow },
           ].map(({ key, label, val }) => (
             <button
               key={key}

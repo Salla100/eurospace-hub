@@ -5,10 +5,11 @@ export default function OpportunityCard({ opp, onClick }) {
   const dl = daysUntil(opp.deadline);
   const dlColor = deadlineColorHex(opp.deadline);
   const dlLabel = deadlineLabel(opp.deadline);
+  const isExpired = opp.deadline && dl < 0;
 
   return (
     <article
-      className="card-hover cursor-pointer rounded-xl border border-space-border bg-space-card flex flex-col h-full fade-in"
+      className={`card-hover cursor-pointer rounded-xl border border-space-border bg-space-card flex flex-col h-full fade-in ${isExpired ? 'opacity-60' : ''}`}
       onClick={() => onClick(opp)}
       role="button"
       tabIndex={0}
@@ -44,6 +45,11 @@ export default function OpportunityCard({ opp, onClick }) {
           {opp.status === 'on_hold' && (
             <span className="badge bg-slate-700 text-slate-300 border border-slate-600 text-xs">
               ⏸ On Hold
+            </span>
+          )}
+          {isExpired && (
+            <span className="badge bg-slate-800 text-slate-400 border border-slate-700 text-xs">
+              🔒 Closed
             </span>
           )}
         </div>
@@ -94,9 +100,9 @@ export default function OpportunityCard({ opp, onClick }) {
               <div className="flex flex-wrap items-center gap-1.5">
                 <Calendar size={12} style={{ color: dlColor }} className="shrink-0" />
                 <span className="text-xs" style={{ color: dlColor }}>
-                  Apply by {formatDate(opp.deadline)}
+                  {isExpired ? `Closed ${formatDate(opp.deadline)}` : `Apply by ${formatDate(opp.deadline)}`}
                 </span>
-                {dlLabel && dl >= 0 && (
+                {dlLabel && !isExpired && (
                   <span
                     className="badge text-xs"
                     style={{ background: `${dlColor}22`, color: dlColor, border: `1px solid ${dlColor}44` }}
@@ -111,18 +117,35 @@ export default function OpportunityCard({ opp, onClick }) {
               <span className="text-xs text-slate-600">No deadline set</span>
             )}
             {opp.last_verified && (
-              <p className="text-slate-600 text-xs mt-1">Verified {formatDate(opp.last_verified)}</p>
+              <p className="text-slate-600 text-xs mt-1">Last checked {formatDate(opp.last_verified)}</p>
             )}
           </div>
-          <a
-            href={opp.application_url || opp.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
-            className="shrink-0 px-3 py-1.5 rounded-lg bg-space-accent/20 text-space-accent border border-space-accent/30 text-xs font-semibold hover:bg-space-accent hover:text-white transition-colors"
-          >
-            Apply →
-          </a>
+
+          {/* Apply button — hidden for expired opportunities */}
+          {!isExpired && (opp.application_url || opp.url) && (
+            <a
+              href={opp.application_url || opp.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="shrink-0 px-3 py-1.5 rounded-lg bg-space-accent/20 text-space-accent border border-space-accent/30 text-xs font-semibold hover:bg-space-accent hover:text-white transition-colors"
+            >
+              Apply →
+            </a>
+          )}
+
+          {/* For expired: show a muted "View" link instead */}
+          {isExpired && (opp.application_url || opp.url) && (
+            <a
+              href={opp.application_url || opp.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="shrink-0 px-3 py-1.5 rounded-lg bg-slate-800 text-slate-500 border border-slate-700 text-xs hover:text-slate-300 transition-colors"
+            >
+              View →
+            </a>
+          )}
         </div>
       </div>
     </article>

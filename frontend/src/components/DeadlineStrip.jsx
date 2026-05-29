@@ -17,7 +17,7 @@ export default function DeadlineStrip({ deadlines = [], onClickOpp }) {
         >
           <div className="flex items-center gap-2 text-space-warn text-xs font-semibold">
             <AlertCircle size={13} />
-            ⚠️ {deadlines.length} deadline{deadlines.length > 1 ? 's' : ''} within 30 days
+            🔔 {deadlines.length} upcoming deadline{deadlines.length > 1 ? 's' : ''} in the next 30 days
           </div>
           {collapsed ? <ChevronDown size={14} className="text-space-warn" /> : <ChevronUp size={14} className="text-space-warn" />}
         </button>
