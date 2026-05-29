@@ -215,6 +215,13 @@ app.get('/api/logs', requireAdmin, async (req, res) => {
   }
 });
 
+// ── POST /api/scrape/batch ── (must be before /api/scrape/:id)
+app.post('/api/scrape/batch', requireAdmin, (req, res) => {
+  const { filter } = req.body;
+  res.status(202).json({ message: 'Batch scrape started', filter });
+  scrapeBatch(filter || 'all', store, { saveOpportunities, logChange }).catch(e => logger.error('Batch scrape error', { error: e.message }));
+});
+
 // ── POST /api/scrape/:id ──
 app.post('/api/scrape/:id', requireAdmin, async (req, res) => {
   const opp = store.opportunities.find(o => o.id === req.params.id);
@@ -225,13 +232,6 @@ app.post('/api/scrape/:id', requireAdmin, async (req, res) => {
   } catch (e) {
     res.json({ id: req.params.id, error: e.message, blocked: false });
   }
-});
-
-// ── POST /api/scrape/batch ──
-app.post('/api/scrape/batch', requireAdmin, (req, res) => {
-  const { filter } = req.body;
-  res.status(202).json({ message: 'Batch scrape started', filter });
-  scrapeBatch(filter || 'all', store, { saveOpportunities, logChange }).catch(e => logger.error('Batch scrape error', { error: e.message }));
 });
 
 // ── POST /api/subscribe ──
