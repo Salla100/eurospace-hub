@@ -112,6 +112,66 @@ function buildEmailWrapper({ title, subtitle, recipientName, cards, unsubscribeE
 </html>`;
 }
 
+// ── Deadline reminders — runs daily, respects subscriber's 7/14/30 day preference ──
+export async function sendDeadlineReminders(store) {
+  if (!process.env.SMTP_USER) {
+    logger.warn('SMTP not configured — skipping deadline reminders');
+    return;
+  }
+  const transporter = createTransporter();
+  const thisYear = new Date().getFullYear();
+
+  for (const subscriber of store.subscribers) {
+    const { email, name, categories = [], notify_days_before = 14 } = subscriber;
+    const cutoff = new Date(Date.now() + notify_days_before * 86400000);
+
+    const opps = store.opportunities.filter((opp) => {
+      if (!opp.deadline) return false;
+      const dl = new Date(opp.deadline);
+      if (dl < new Date() || dl > cutoff) return false;
+      if (categories.length > 0 && !categories.includes(opp.category)) return false;
+      // Only send once per opportunity per subscriber per year
+      const alreadySent = store.notifications_sent?.find(
+        (n) =>
+          n.subscriber_email === email &&
+          n.opportunity_id === opp.id &&
+          new Date(n.sent_at).getFullYear() === thisYear
+      );
+      return !alreadySent;
+    });
+
+    if (!opps.length) continue;
+
+    try {
+      const cards = opps.map((o) => buildOppCard(o)).join('');
+      await transporter.sendMail({
+        from: `"EuroSpace Student Hub" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+        to: email,
+        subject: `📅 ${opps.length} space opportunit${opps.length > 1 ? 'ies have' : 'y has'} an upcoming deadline`,
+        html: buildEmailWrapper({
+          title: `📅 ${opps.length} Upcoming Deadline${opps.length > 1 ? 's' : ''}`,
+          subtitle: `here ${opps.length > 1 ? 'are' : 'is'} your personalised space opportunity alert${opps.length > 1 ? 's' : ''}.`,
+          recipientName: name,
+          cards,
+          unsubscribeEmail: email,
+        }),
+      });
+      // Record that we sent these so we don't send again this year
+      if (!store.notifications_sent) store.notifications_sent = [];
+      for (const opp of opps) {
+        store.notifications_sent.push({
+          subscriber_email: email,
+          opportunity_id: opp.id,
+          sent_at: new Date().toISOString(),
+        });
+      }
+      logger.info(`Sent deadline reminder to ${email} for ${opps.length} opportunities`);
+    } catch (e) {
+      logger.error(`Email error for ${email}`, { error: e.message });
+    }
+  }
+}
+
 // ── Send alert when a new opportunity is published ──
 export async function sendNewOpportunityAlert(opp, store) {
   if (!process.env.SMTP_USER) {

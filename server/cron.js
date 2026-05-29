@@ -18,7 +18,7 @@ import {
   scrapeBvsrMembers,
   scrapeNorstecMembers,
 } from './scraper.js';
-import { sendNewOpportunityAlert, sendDeadlineUpdateAlert } from './notifier.js';
+import { sendDeadlineReminders, sendNewOpportunityAlert, sendDeadlineUpdateAlert } from './notifier.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -408,6 +408,12 @@ export function startCron(store, deps) {
         await updateOpportunityFromScrape(opp.id, r, store, deps);
       } catch (e) { logger.error(`Daily scrape error for ${opp.id}`, { error: e.message }); }
     }
+
+    // Send deadline reminders to subscribers based on their 7/14/30 day preference
+    await sendDeadlineReminders(store).catch((e) =>
+      logger.error('Deadline reminder error', { error: e.message })
+    );
+    if (deps?.saveNotificationsSent) await deps.saveNotificationsSent();
 
     store.config.scraper_last_run = new Date().toISOString();
     await fs.writeJson(path.join(DATA_DIR, 'config.json'), store.config, { spaces: 2 });
