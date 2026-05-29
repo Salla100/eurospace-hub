@@ -90,39 +90,68 @@ function extractDatesFromText(text) {
   return dates;
 }
 
+// Shared browser instance for batch scrapes — avoids launching Chrome 64 times
+let sharedBrowser = null;
+async function getSharedBrowser() {
+  if (!sharedBrowser || !sharedBrowser.connected) {
+    sharedBrowser = await getBrowser();
+  }
+  return sharedBrowser;
+}
+export async function closeSharedBrowser() {
+  if (sharedBrowser) {
+    await sharedBrowser.close().catch(() => {});
+    sharedBrowser = null;
+  }
+}
+
 async function scrapePage(url, waitSelector = 'body', timeout = 15000) {
   await rateLimit(url);
-  let browser;
-  try {
-    browser = await getBrowser();
+  const HARD_TIMEOUT = timeout + 20000; // hard ceiling in case Puppeteer launch hangs
+
+  const scrape = async () => {
+    const browser = await getSharedBrowser();
     const page = await browser.newPage();
-    await page.setUserAgent('Mozilla/5.0 (compatible; EuroSpaceHub/1.0; +https://eurospacehub.eu)');
-    await page.setDefaultTimeout(timeout);
-
-    const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout });
-    if (response && (response.status() === 403 || response.status() === 429)) {
-      return { blocked: true, error: `HTTP ${response.status()}`, text: '' };
-    }
-
     try {
-      await page.waitForSelector(waitSelector, { timeout: 10000 });
-    } catch {
-      logger.warn(`Selector "${waitSelector}" not found on ${url}`);
+      await page.setUserAgent('Mozilla/5.0 (compatible; EuroSpaceHub/1.0; +https://eurospacehub.eu)');
+      await page.setDefaultTimeout(timeout);
+
+      const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout });
+      if (response && (response.status() === 403 || response.status() === 429)) {
+        return { blocked: true, error: `HTTP ${response.status()}`, text: '' };
+      }
+
+      try {
+        await page.waitForSelector(waitSelector, { timeout: 10000 });
+      } catch {
+        logger.warn(`Selector "${waitSelector}" not found on ${url}`);
+      }
+
+      const text = await page.evaluate(() => document.body?.innerText || '');
+      const html = await page.content();
+
+      if (!text || text.length < 100) {
+        return { blocked: true, error: 'Empty or very short page content', text: '', html: '' };
+      }
+
+      return { blocked: false, text, html, status: response?.status() };
+    } finally {
+      await page.close().catch(() => {});
     }
+  };
 
-    const text = await page.evaluate(() => document.body?.innerText || '');
-    const html = await page.content();
-
-    if (!text || text.length < 100) {
-      return { blocked: true, error: 'Empty or very short page content', text: '', html: '' };
-    }
-
-    return { blocked: false, text, html, status: response?.status() };
+  try {
+    return await Promise.race([
+      scrape(),
+      new Promise((_, reject) =>
+        setTimeout(() => reject(new Error(`Hard timeout after ${HARD_TIMEOUT}ms for ${url}`)), HARD_TIMEOUT)
+      ),
+    ]);
   } catch (e) {
     logger.error(`Scrape error for ${url}`, { error: e.message });
+    // Reset shared browser on error so next scrape gets a fresh one
+    await closeSharedBrowser();
     return { blocked: true, error: e.message, text: '', html: '' };
-  } finally {
-    if (browser) await browser.close().catch(() => {});
   }
 }
 
@@ -436,6 +465,8 @@ export async function scrapeBatch(filter, store, deps) {
       results.push({ id: opp.id, error: e.message, blocked: false });
     }
   }
+  await closeSharedBrowser();
+  logger.info(`Batch scrape complete: ${results.length} processed`);
   return results;
 }
 
