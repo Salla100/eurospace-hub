@@ -16,6 +16,17 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
+    deploy:
+      resources:
+        limits:
+          memory: 1g        # Chromium can spike — cap at 1GB
+        reservations:
+          memory: 256m      # Guaranteed minimum
+    logging:
+      driver: json-file
+      options:
+        max-size: "20m"     # Rotate at 20MB
+        max-file: "5"       # Keep last 5 files (100MB total max)
     networks:
       - internal
 
@@ -27,6 +38,11 @@ services:
     restart: unless-stopped
     depends_on:
       - api
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "3"
     networks:
       - internal
 
