@@ -18,7 +18,7 @@ import {
   scrapeBvsrMembers,
   scrapeNorstecMembers,
 } from './scraper.js';
-import { sendDeadlineReminders } from './notifier.js';
+import { sendNewOpportunityAlert, sendDeadlineUpdateAlert } from './notifier.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -91,6 +91,10 @@ async function handleEsaAcademyResult(result, store, deps) {
             new: cycleText,
           },
         });
+        // Notify subscribers that this programme has reopened
+        await sendNewOpportunityAlert(opp, store).catch((e) =>
+          logger.error('Email alert error', { error: e.message })
+        );
       } else if (nowClosed) {
         opp.status = 'closed';
       }
@@ -176,6 +180,10 @@ async function updateOpportunityFromScrape(id, scrapeResult, store, deps) {
       timestamp: new Date().toISOString(),
       data: { id, title: opp.title, old_deadline: old, new_deadline: best },
     });
+    // Email subscribers when a recurring opportunity opens a new year's sign-up
+    await sendDeadlineUpdateAlert(id, old, store).catch((e) =>
+      logger.error('Email alert error', { error: e.message })
+    );
     return { id, changed: true, old_deadline: old, new_deadline: best };
   }
   opp.last_verified = new Date().toISOString().slice(0, 10);
