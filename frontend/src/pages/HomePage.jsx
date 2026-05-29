@@ -169,7 +169,7 @@ export default function HomePage() {
 
       {/* ESA Academy Section */}
       {(filters.group === 'All' || filters.group === 'ESA Academy') && (
-        <section id="workshops" className="py-14 border-t border-space-border">
+        <section id="esa-academy" className="py-14 border-t border-space-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="flex flex-col sm:flex-row sm:items-end gap-4 mb-8">
               <div>
@@ -256,11 +256,11 @@ export default function HomePage() {
       </div>
 
       {/* Subscribe */}
-      <section id="about" className="py-14 border-t border-space-border">
+      <section id="subscribe" className="py-14 border-t border-space-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
-            <h2 className="text-2xl font-extrabold text-space-text mb-2">Deadline Alerts</h2>
-            <p className="text-space-muted text-sm">Get email reminders before applications close</p>
+            <h2 className="text-2xl font-extrabold text-space-text mb-2">Stay Updated</h2>
+            <p className="text-space-muted text-sm">Get alerts when new opportunities open, deadlines approach, or programmes reopen</p>
           </div>
           <SubscribePanel />
         </div>
@@ -303,10 +303,10 @@ export default function HomePage() {
               <div>
                 <p className="text-xs font-semibold text-space-muted mb-2 uppercase tracking-wider">Contribute</p>
                 <div className="space-y-1">
-                  <a href="mailto:suggest@eurospacehub.eu" className="block text-xs text-slate-400 hover:text-space-accent">
+                  <a href="https://github.com/Salla100/eurospace-hub/issues/new" target="_blank" rel="noopener noreferrer" className="block text-xs text-slate-400 hover:text-space-accent">
                     Suggest an opportunity
                   </a>
-                  <a href="https://github.com/eurospacehub" target="_blank" rel="noopener noreferrer" className="block text-xs text-slate-400 hover:text-space-accent">
+                  <a href="https://github.com/Salla100/eurospace-hub" target="_blank" rel="noopener noreferrer" className="block text-xs text-slate-400 hover:text-space-accent">
                     GitHub
                   </a>
                 </div>

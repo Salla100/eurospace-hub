@@ -157,7 +157,13 @@ async function updateOpportunityFromScrape(id, scrapeResult, store, deps) {
   const deadlineDates = (scrapeResult.dates || []).filter(
     (d) => d.near_deadline && new Date(d.date) > new Date()
   );
-  if (!deadlineDates.length) return { id, changed: false };
+  if (!deadlineDates.length) {
+    // No upcoming deadline found — still stamp last_verified so the scraper
+    // run is recorded and "Open Now" / stale-flagging work correctly.
+    opp.last_verified = new Date().toISOString().slice(0, 10);
+    await deps.saveOpportunities();
+    return { id, changed: false };
+  }
 
   deadlineDates.sort((a, b) => new Date(a.date) - new Date(b.date));
   const best = deadlineDates[0].date;

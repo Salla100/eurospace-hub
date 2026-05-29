@@ -12,6 +12,8 @@ const CATEGORIES = [
   { id: 'hackathon', label: 'Hackathons' },
   { id: 'bip', label: 'BIPs (Erasmus+)' },
   { id: 'workshop_external', label: 'External Workshops' },
+  { id: 'national_network', label: 'Student Networks' },
+  { id: 'conference_sponsorship', label: 'Conferences' },
 ];
 
 export default function SubscribePanel() {
@@ -23,6 +25,7 @@ export default function SubscribePanel() {
   });
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
   const [message, setMessage] = useState('');
+  const [emailError, setEmailError] = useState('');
 
   function toggleCat(id) {
     setForm((f) => ({
@@ -35,7 +38,13 @@ export default function SubscribePanel() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    setEmailError('');
     if (!form.name || !form.email) return;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) {
+      setEmailError('Please enter a valid email address.');
+      return;
+    }
     setStatus('loading');
     try {
       const res = await api.subscribe(form);
@@ -84,10 +93,11 @@ export default function SubscribePanel() {
               type="email"
               required
               value={form.email}
-              onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+              onChange={(e) => { setForm((f) => ({ ...f, email: e.target.value })); setEmailError(''); }}
               placeholder="you@university.edu"
-              className="w-full px-4 py-2.5 rounded-lg bg-space-card border border-space-border text-sm text-space-text placeholder-space-muted focus:outline-none focus:border-space-accent transition-colors"
+              className={`w-full px-4 py-2.5 rounded-lg bg-space-card border text-sm text-space-text placeholder-space-muted focus:outline-none transition-colors ${emailError ? 'border-space-danger focus:border-space-danger' : 'border-space-border focus:border-space-accent'}`}
             />
+            {emailError && <p className="text-space-danger text-xs mt-1">{emailError}</p>}
           </div>
         </div>
 
@@ -145,7 +155,7 @@ export default function SubscribePanel() {
           className="flex items-center gap-2 px-6 py-3 rounded-xl bg-space-accent text-white font-semibold text-sm hover:bg-blue-500 transition-colors disabled:opacity-60"
         >
           <Bell size={15} />
-          {status === 'loading' ? 'Subscribing…' : 'Subscribe to Deadline Alerts'}
+          {status === 'loading' ? 'Subscribing…' : 'Subscribe to Alerts'}
           <Mail size={14} />
         </button>
       </form>

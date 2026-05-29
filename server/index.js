@@ -213,7 +213,7 @@ app.get('/api/stats', (req, res) => {
     team_based_count: opps.filter(o => o.team_based).length,
     esa_academy_count: opps.filter(o => o.category?.startsWith('esa_academy')).length,
     categories,
-    last_updated: store.loaded_at,
+    last_updated: store.config.scraper_last_run || store.loaded_at,
     stale_count: opps.filter(o => o.last_verified && o.last_verified < ninetyDaysAgo).length,
     bvsr_member_count: store.members_bvsr.length,
     norstec_member_count: store.members_norstec.length
@@ -276,6 +276,8 @@ app.post('/api/scrape/:id', requireAdmin, async (req, res) => {
 app.post('/api/subscribe', async (req, res) => {
   const { name, email, categories, notify_days_before } = req.body;
   if (!email || !name) return res.status(400).json({ error: 'name and email required' });
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) return res.status(400).json({ error: 'invalid email address' });
   const existing = store.subscribers.find(s => s.email === email);
   if (existing) {
     Object.assign(existing, { name, categories: categories || [], notify_days_before: notify_days_before || 14, updated_at: new Date().toISOString() });
@@ -289,6 +291,7 @@ app.post('/api/subscribe', async (req, res) => {
 // ── DELETE /api/subscribe ──
 app.delete('/api/subscribe', async (req, res) => {
   const { email } = req.body;
+  if (!email) return res.status(400).json({ error: 'email required' });
   store.subscribers = store.subscribers.filter(s => s.email !== email);
   await saveSubscribers();
   res.json({ success: true });

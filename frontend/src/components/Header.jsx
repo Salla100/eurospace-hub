@@ -4,11 +4,11 @@ import { Menu, X } from 'lucide-react';
 
 const NAV = [
   { href: '#opportunities', label: 'Opportunities' },
-  { href: '#workshops', label: 'Workshops' },
+  { href: '#esa-academy', label: 'ESA Academy' },
   { href: '#competitions', label: 'Competitions' },
   { href: '#networks', label: 'Networks' },
   { href: '#teams', label: 'Teams' },
-  { href: '#about', label: 'About' },
+  { href: '#subscribe', label: 'Subscribe' },
 ];
 
 export default function Header() {
