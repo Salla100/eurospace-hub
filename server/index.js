@@ -357,7 +357,7 @@ const PORT = process.env.PORT || 3001;
 
 async function main() {
   await loadData();
-  startCron(store, { saveOpportunities, saveMembersBvsr, saveMembersNorstec, logChange });
+  startCron(store, { saveOpportunities, saveMembersBvsr, saveMembersNorstec, saveNotificationsSent, logChange });
   app.listen(PORT, () => logger.info(`EuroSpace API running on port ${PORT}`));
 }
 
