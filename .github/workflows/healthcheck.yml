@@ -1,0 +1,19 @@
+name: API Health Check
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'   # Every 15 minutes
+  workflow_dispatch:
+
+jobs:
+  healthcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check API health
+        run: |
+          response=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 https://api.svenamberg.com/health)
+          if [ "$response" != "200" ]; then
+            echo "Health check failed — HTTP $response"
+            exit 1
+          fi
+          echo "API healthy — HTTP $response"
