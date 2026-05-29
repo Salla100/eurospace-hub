@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -78,7 +79,44 @@ export async function logChange(entry) {
 export function getStore() { return store; }
 
 const app = express();
-app.use(cors());
+
+// CORS — allow frontend and direct API access
+app.use(cors({
+  origin: [
+    'https://space.svenamberg.com',
+    'http://localhost:5173',         // local dev
+    'http://localhost:3001',
+  ],
+  methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+}));
+
+// Rate limiting — public endpoints: 60 req/min per IP
+const publicLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 60,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many requests, please slow down.' },
+});
+
+// Rate limiting — admin endpoints: 20 req/min per IP
+const adminLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 20,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many requests, please slow down.' },
+});
+
+app.use('/api/opportunities', publicLimiter);
+app.use('/api/members', publicLimiter);
+app.use('/api/stats', publicLimiter);
+app.use('/api/deadlines', publicLimiter);
+app.use('/api/scrape', adminLimiter);
+app.use('/api/subscribers', adminLimiter);
+app.use('/api/config', adminLimiter);
+app.use('/api/logs', adminLimiter);
+
 app.use(express.json());
 
 // Auth middleware
