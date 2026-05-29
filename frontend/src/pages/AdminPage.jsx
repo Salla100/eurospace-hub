@@ -347,11 +347,12 @@ function MembersTab({ secret, onToast }) {
 // ─── Tab 5: Subscribers ───────────────────────────────────────────────────────
 function SubscribersTab({ secret, onToast }) {
   const [data, setData] = useState(null);
+  const [testEmailTarget, setTestEmailTarget] = useState('');
 
   useEffect(() => { api.getSubscribers(secret).then(setData).catch(console.error); }, []);
 
   async function handleTestEmail() {
-    try { await api.testEmail('', secret); onToast('Test email sent', 'success'); }
+    try { await api.testEmail(testEmailTarget, secret); onToast(`Test email sent${testEmailTarget ? ` to ${testEmailTarget}` : ''}`, 'success'); }
     catch (e) { onToast(e.message, 'error'); }
   }
 
@@ -359,12 +360,21 @@ function SubscribersTab({ secret, onToast }) {
 
   return (
     <div>
-      <div className="flex items-center gap-4 mb-6">
+      <div className="flex flex-wrap items-center gap-3 mb-6">
         <div className="text-3xl font-bold text-space-text">{data.total}</div>
         <div className="text-space-muted text-sm">total subscribers</div>
-        <button onClick={handleTestEmail} className="ml-auto flex items-center gap-1.5 px-4 py-2 rounded-lg bg-space-card border border-space-border text-xs text-slate-400 hover:border-space-accent hover:text-space-accent transition-colors">
-          📧 Send Test Email
-        </button>
+        <div className="ml-auto flex items-center gap-2">
+          <input
+            type="email"
+            value={testEmailTarget}
+            onChange={(e) => setTestEmailTarget(e.target.value)}
+            placeholder="recipient@email.com (optional)"
+            className="px-3 py-2 rounded-lg bg-space-card border border-space-border text-xs text-space-text placeholder-space-muted focus:outline-none focus:border-space-accent w-56"
+          />
+          <button onClick={handleTestEmail} className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-space-card border border-space-border text-xs text-slate-400 hover:border-space-accent hover:text-space-accent transition-colors whitespace-nowrap">
+            📧 Send Test Email
+          </button>
+        </div>
       </div>
       <div className="space-y-2">
         {data.subscribers.map((s, i) => (
