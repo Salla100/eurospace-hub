@@ -86,6 +86,8 @@ export const api = {
     withFallback(() => request('/api/members/bvsr'), 'members_bvsr.json'),
   getMembersNorstec: () =>
     withFallback(() => request('/api/members/norstec'), 'members_norstec.json'),
+  getMembersEurope: () =>
+    withFallback(() => request('/api/members/europe'), 'members_europe.json'),
   getChanges: (limit = 100) => request(`/api/changes?limit=${limit}`),
   getLogs: (lines = 200, secret) =>
     request(`/api/logs?lines=${lines}`, { headers: { 'x-admin-secret': secret } }),

@@ -34,6 +34,7 @@ let store = {
   opportunities: [],
   members_bvsr: [],
   members_norstec: [],
+  members_europe: [],
   subscribers: [],
   notifications_sent: [],
   config: {},
@@ -44,11 +45,12 @@ async function loadData() {
   store.opportunities = await fs.readJson(path.join(DATA_DIR, 'opportunities.json')).catch(() => []);
   store.members_bvsr = await fs.readJson(path.join(DATA_DIR, 'members_bvsr.json')).catch(() => []);
   store.members_norstec = await fs.readJson(path.join(DATA_DIR, 'members_norstec.json')).catch(() => []);
+  store.members_europe = await fs.readJson(path.join(DATA_DIR, 'members_europe.json')).catch(() => []);
   store.subscribers = await fs.readJson(path.join(DATA_DIR, 'subscribers.json')).catch(() => []);
   store.notifications_sent = await fs.readJson(path.join(DATA_DIR, 'notifications_sent.json')).catch(() => []);
   store.config = await fs.readJson(path.join(DATA_DIR, 'config.json')).catch(() => ({}));
   store.loaded_at = new Date().toISOString();
-  logger.info(`Data loaded: ${store.opportunities.length} opportunities, ${store.members_bvsr.length} BVSR, ${store.members_norstec.length} NORSTEC`);
+  logger.info(`Data loaded: ${store.opportunities.length} opportunities, ${store.members_bvsr.length} BVSR, ${store.members_norstec.length} NORSTEC, ${store.members_europe.length} Europe`);
 }
 
 export async function saveOpportunities() {
@@ -225,6 +227,9 @@ app.get('/api/members/bvsr', (req, res) => res.json(store.members_bvsr));
 
 // ── GET /api/members/norstec ──
 app.get('/api/members/norstec', (req, res) => res.json(store.members_norstec));
+
+// ── GET /api/members/europe ──
+app.get('/api/members/europe', (req, res) => res.json(store.members_europe));
 
 // ── GET /api/changes ──
 app.get('/api/changes', async (req, res) => {

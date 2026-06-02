@@ -24,6 +24,7 @@ export default function HomePage() {
   const [stats, setStats] = useState(null);
   const [bvsr, setBvsr] = useState([]);
   const [norstec, setNorstec] = useState([]);
+  const [europeTeams, setEuropeTeams] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedOpp, setSelectedOpp] = useState(null);
 
@@ -44,13 +45,15 @@ export default function HomePage() {
       api.getStats(),
       api.getMembersBvsr(),
       api.getMembersNorstec(),
+      api.getMembersEurope(),
     ])
-      .then(([opps, dls, st, b, n]) => {
+      .then(([opps, dls, st, b, n, eu]) => {
         setOpportunities(opps);
         setDeadlines(dls);
         setStats(st);
         setBvsr(b);
         setNorstec(n);
+        setEuropeTeams(eu);
       })
       .catch(console.error)
       .finally(() => setLoading(false));
@@ -252,7 +255,7 @@ export default function HomePage() {
 
       {/* Teams */}
       <div className="border-t border-space-border">
-        <TeamSection bvsr={bvsr} norstec={norstec} />
+        <TeamSection bvsr={bvsr} norstec={norstec} europe={europeTeams} />
       </div>
 
       {/* Internships & Traineeships */}
