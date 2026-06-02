@@ -3964,5 +3964,55 @@
       "navigation",
       "Earth-observation"
     ]
+  },
+  {
+    "id": "asclepios-call-for-projects",
+    "title": "ASCLEPIOS — Call for Experiments",
+    "organisation": "ASCLEPIOS Association / EPFL",
+    "category": "workshop_external",
+    "subcategory": null,
+    "description": "Annual Call for Projects from this student-run analog astronaut mission at EPFL. MSc/PhD teams worldwide submit experiments across four domains (Life Sciences & Medicine, Environment & Physics, Robotics & Lunar Operations, Space Habitat Engineering) to be run during a 16-day isolated lunar base simulation in the Swiss Alps. Each selected project gets a dedicated Science Officer and is tested completely free of charge. Past experiment partners include ESA, NASA Ames, TU Berlin, and CNES.",
+    "url": "https://asclepios.ch/collaborate-science-projects/",
+    "application_url": "https://asclepios.ch/collaborate-science-projects/",
+    "scrape_url": "https://asclepios.ch/collaborate-science-projects/",
+    "deadline": null,
+    "deadline_recurring": true,
+    "deadline_month_typical": "Autumn",
+    "deadline_notes": "Call for Projects opens each autumn for the following July mission. Monitor asclepios.ch or contact asclepios.main@gmail.com.",
+    "event_date": null,
+    "event_month_typical": "July",
+    "location": "Sasso San Gottardo, Swiss Alps (simulation); remote experiment design",
+    "duration": "16-day mission (year-round project development)",
+    "funding_available": false,
+    "funding_details": "No cost to experiment teams — integration and operation entirely free",
+    "funding_amount_eur": null,
+    "eligibility_level": [
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science",
+      "any"
+    ],
+    "eligibility_countries": "International",
+    "team_based": true,
+    "open_to_non_engineers": true,
+    "featured": false,
+    "needs_review": false,
+    "last_verified": "2026-06-02",
+    "scrape_selector": null,
+    "tags": [
+      "ASCLEPIOS",
+      "analog",
+      "lunar",
+      "space-medicine",
+      "EPFL",
+      "Switzerland",
+      "experiment",
+      "simulation",
+      "isolation",
+      "free"
+    ]
   }
 ]
