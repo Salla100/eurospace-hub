@@ -4643,5 +4643,100 @@
       "scholarship",
       "funded"
     ]
+  },
+  {
+    "id": "esa-eo-college",
+    "title": "ESA EO College — Free Online Earth Observation Courses",
+    "organisation": "ESA / EO College",
+    "category": "course_online",
+    "description": "Free online learning platform run by ESA and EO College with 15+ self-paced courses on Earth Observation: Sentinel data, hyperspectral remote sensing, agriculture, climate change, drought, land cover, and AI/ML for EO. Open to anyone worldwide. Certificates of completion available.",
+    "url": "https://eo-college.org",
+    "application_url": "https://eo-college.org",
+    "scrape_url": "https://eo-college.org",
+    "deadline": null,
+    "deadline_recurring": false,
+    "deadline_month_typical": null,
+    "deadline_notes": "Open enrolment anytime. New courses added regularly.",
+    "event_date": null,
+    "event_month_typical": null,
+    "location": "Online",
+    "duration": "Self-paced",
+    "funding_available": false,
+    "funding_details": "Completely free",
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "any"
+    ],
+    "eligibility_countries": "International",
+    "team_based": false,
+    "open_to_non_engineers": true,
+    "featured": false,
+    "needs_review": false,
+    "last_verified": "2026-06-02",
+    "scrape_selector": null,
+    "tags": [
+      "ESA",
+      "EO-College",
+      "Earth-observation",
+      "Copernicus",
+      "Sentinel",
+      "free",
+      "online",
+      "remote-sensing",
+      "AI",
+      "ML",
+      "climate"
+    ]
+  },
+  {
+    "id": "rin-space-applications-hub",
+    "title": "RIN Space Applications Learning Hub",
+    "organisation": "Royal Institute of Navigation (RIN) / Space Skills Alliance",
+    "category": "course_online",
+    "description": "Free modular online training platform covering four domains: Earth Observation & GIS, Positioning Navigation & Timing (PNT/GNSS), Satellite Communications, and cross-cutting skills (systems engineering, data/AI/ML, commercial operations). Foundation to intermediate level. Developed by RIN, Space Professionals, and the Space Skills Alliance.",
+    "url": "https://rin.org.uk/page/SpaceHub",
+    "application_url": "https://rin.org.uk/page/SpaceHub",
+    "scrape_url": "https://rin.org.uk/page/SpaceHub",
+    "deadline": null,
+    "deadline_recurring": false,
+    "deadline_month_typical": null,
+    "deadline_notes": "Open enrolment anytime.",
+    "event_date": null,
+    "event_month_typical": null,
+    "location": "Online",
+    "duration": "Self-paced",
+    "funding_available": false,
+    "funding_details": "Completely free",
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "any"
+    ],
+    "eligibility_countries": "International",
+    "team_based": false,
+    "open_to_non_engineers": true,
+    "featured": false,
+    "needs_review": false,
+    "last_verified": "2026-06-02",
+    "scrape_selector": null,
+    "tags": [
+      "RIN",
+      "navigation",
+      "GNSS",
+      "EO",
+      "SatComms",
+      "free",
+      "online",
+      "UK",
+      "systems-engineering",
+      "AI"
+    ]
   }
 ]

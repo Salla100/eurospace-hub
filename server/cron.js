@@ -301,6 +301,68 @@ async function syncNorstecMembers(store, deps) {
   return newDiscovered;
 }
 
+// ── Space Training Catalogue API sync ────────────────────────────
+// Queries the free Space Training UK catalogue monthly for new free
+// workshops / short courses not yet in our database.
+const SPACE_TRAINING_API = 'https://training.spaceskills.org/api/v2/opportunities';
+const SPACE_TRAINING_TYPES = 'Workshop;Short course;Seminar';
+
+async function syncSpaceTrainingCatalogue(store) {
+  logger.info('Space Training Catalogue sync starting');
+  const url =
+    `${SPACE_TRAINING_API}?q[price_gbp_lteq]=0` +
+    `&q[training_types_name_eq_any]=${encodeURIComponent(SPACE_TRAINING_TYPES)}` +
+    `&page[size]=100`;
+
+  const res = await fetch(url, { signal: AbortSignal.timeout(15000) });
+  if (!res.ok) throw new Error(`Space Training API responded ${res.status}`);
+  const json = await res.json();
+  const items = json.data || [];
+
+  // Normalise our existing titles for fuzzy matching
+  const knownTitles = store.opportunities.map((o) =>
+    (o.title || '').toLowerCase().replace(/[^a-z0-9 ]/g, '').trim()
+  );
+
+  const newDiscovered = [];
+  for (const item of items) {
+    const attrs = item.attributes || item;
+    const title = (attrs.title || '').trim();
+    if (!title) continue;
+
+    const normTitle = title.toLowerCase().replace(/[^a-z0-9 ]/g, '').trim();
+    const firstWords = normTitle.split(' ').slice(0, 5).join(' ');
+
+    const alreadyKnown = knownTitles.some(
+      (t) => t === normTitle || t.includes(firstWords) || normTitle.includes(t.split(' ').slice(0, 5).join(' '))
+    );
+    if (alreadyKnown) continue;
+
+    const provider = Array.isArray(attrs.providers)
+      ? attrs.providers.map((p) => p.name).join(', ')
+      : (attrs.provider || '');
+    const trainingType = Array.isArray(attrs.training_types)
+      ? attrs.training_types.map((t) => t.name).join(', ')
+      : '';
+    const topics = Array.isArray(attrs.topics)
+      ? attrs.topics.map((t) => t.name).join(', ')
+      : '';
+
+    newDiscovered.push({
+      type: 'opportunity',
+      name: title,
+      provider,
+      training_type: trainingType,
+      topics,
+      source_url: `https://spacetraining.uk/opportunities/${item.id}`,
+    });
+    logger.info(`Space Training: new free item found — ${title}`);
+  }
+
+  logger.info(`Space Training sync complete: ${items.length} free items checked, ${newDiscovered.length} new`);
+  return newDiscovered;
+}
+
 async function flagStaleOpportunities(store, deps) {
   const cutoff = new Date(Date.now() - 90 * 86400000).toISOString().slice(0, 10);
   const staled = [];
@@ -429,27 +491,41 @@ export function startCron(store, deps) {
   // ── Monthly: 1st 07:00 UTC ──
   cron.schedule('0 7 1 * *', async () => {
     logger.info('Monthly cron starting');
+    const errors = [];
+
     const bvsrNew = await syncBvsrMembers(store, deps).catch((e) => {
       logger.error('BVSR sync error', { error: e.message });
+      errors.push({ id: 'bvsr_sync', error: e.message });
       return [];
     });
     const norstecNew = await syncNorstecMembers(store, deps).catch((e) => {
       logger.error('NORSTEC sync error', { error: e.message });
+      errors.push({ id: 'norstec_sync', error: e.message });
+      return [];
+    });
+    const spaceTrainingNew = await syncSpaceTrainingCatalogue(store).catch((e) => {
+      logger.error('Space Training sync error', { error: e.message });
+      errors.push({ id: 'space_training_sync', error: e.message });
       return [];
     });
     const stale_flagged = await flagStaleOpportunities(store, deps);
+
+    const newDiscovered = [...bvsrNew, ...norstecNew, ...spaceTrainingNew];
 
     await fireWebhook({
       event: 'cron_summary',
       run_at: new Date().toISOString(),
       schedule: 'monthly',
-      total_scraped: 2,
+      total_scraped: 3,
       changed: [],
-      new_discovered: [...bvsrNew, ...norstecNew],
-      errors: [],
+      new_discovered: newDiscovered,
+      errors,
       stale_flagged,
     });
-    logger.info('Monthly cron complete', { stale_flagged: stale_flagged.length });
+    logger.info('Monthly cron complete', {
+      stale_flagged: stale_flagged.length,
+      space_training_new: spaceTrainingNew.length,
+    });
   });
 
   logger.info('Cron jobs scheduled: weekly Mon 06:00, daily 08:00, monthly 1st 07:00 UTC');
