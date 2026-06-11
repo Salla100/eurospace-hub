@@ -4738,5 +4738,55 @@
       "systems-engineering",
       "AI"
     ]
+  },
+  {
+    "id": "space-challenges-bootcamp",
+    "title": "Space Challenges Bootcamp",
+    "organisation": "EnduroSat / spaceedu.net",
+    "category": "summer_school",
+    "description": "Intensive 1-month bootcamp in Sofia, Bulgaria run by satellite manufacturer EnduroSat. 250+ hours of workshops and lectures, 70% hands-on prototyping. Curriculum covers satellite engineering, space hardware, AI, orbital mechanics, space law, and entrepreneurship — taught by international industry experts. Accommodation fully covered. 600+ alumni from 20+ countries. Requires completing 20+ points on the free SpacePort Academy online preparatory courses before applying.",
+    "url": "https://spaceedu.net",
+    "application_url": "https://spaceedu.net",
+    "scrape_url": "https://spaceedu.net",
+    "deadline": "2026-06-15",
+    "deadline_recurring": true,
+    "deadline_month_typical": "June",
+    "deadline_notes": "Must complete 20+ points on SpacePort Academy (free online) before applying. Application deadline 15 June 2026, 23:59 UTC.",
+    "event_date": "2026-07-20",
+    "event_month_typical": "July",
+    "location": "Sofia, Bulgaria",
+    "duration": "1 month (20 Jul – 21 Aug 2026)",
+    "funding_available": true,
+    "funding_details": "Accommodation fully covered; programme cost not publicly listed",
+    "funding_amount_eur": null,
+    "eligibility_level": [
+      "BSc",
+      "MSc"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science",
+      "any"
+    ],
+    "eligibility_countries": "International",
+    "eligibility_age": "16-26",
+    "team_based": false,
+    "open_to_non_engineers": true,
+    "featured": false,
+    "needs_review": false,
+    "last_verified": "2026-06-02",
+    "scrape_selector": null,
+    "tags": [
+      "EnduroSat",
+      "Bulgaria",
+      "Sofia",
+      "satellite",
+      "hands-on",
+      "bootcamp",
+      "AI",
+      "summer",
+      "16-26",
+      "funded-accommodation"
+    ]
   }
 ]
