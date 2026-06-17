@@ -344,6 +344,14 @@ export default function HomePage() {
                     GitHub
                   </a>
                 </div>
+                <a
+                  href="https://ko-fi.com/eurospacehub"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 mt-3 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#29ABE0]/10 text-[#29ABE0] border border-[#29ABE0]/30 hover:bg-[#29ABE0]/20 transition-colors"
+                >
+                  ☕ Support on Ko-fi
+                </a>
               </div>
             </div>
           </div>
