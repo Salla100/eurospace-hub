@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 import { logger } from './scraper.js';
 import {
   scrapeEsaAcademy,
+  scrapeEsaTlpPortfolio,
   scrapeShortCourseScholarship,
   scrapeAcademicScholarship,
   scrapeConferenceSponsorshipPage,
@@ -80,6 +81,7 @@ async function handleEsaAcademyResult(result, store, deps) {
       const wasClosed = (oldNotes || '').toLowerCase().includes('currently closed');
       if (!nowClosed && wasClosed) {
         opp.needs_review = true;
+        opp.status = 'open';
         await fireWebhook({
           event: 'programme_status_changed',
           timestamp: new Date().toISOString(),
@@ -363,6 +365,67 @@ async function syncSpaceTrainingCatalogue(store) {
   return newDiscovered;
 }
 
+async function syncEsaTlpStatus(store, deps) {
+  logger.info('ESA TLP portfolio status sync starting');
+  const result = await scrapeEsaTlpPortfolio();
+  if (result.blocked) {
+    logger.warn('TLP portfolio scrape blocked');
+    return { changed: 0, blocked: true };
+  }
+
+  const normalize = (s) =>
+    s.toLowerCase().replace(/[^a-z0-9 ]/g, '').replace(/\s+/g, ' ').trim();
+
+  const esaWorkshops = store.opportunities.filter(
+    (o) => ['esa_academy_workshop', 'esa_academy_project', 'esa_academy_scholarship', 'esa_academy_sponsorship'].includes(o.category)
+  );
+
+  const statusChanges = [];
+  for (const session of result.sessions) {
+    const normSession = normalize(session.title);
+    const sessionWords = normSession.split(' ').slice(0, 6).join(' ');
+
+    const matched = esaWorkshops.find((o) => {
+      const normTitle = normalize(o.title);
+      const titleWords = normTitle.split(' ').slice(0, 6).join(' ');
+      return normTitle === normSession || normTitle.startsWith(sessionWords) || normSession.startsWith(titleWords);
+    });
+
+    if (!matched) continue;
+
+    const newStatus = session.status === 'open' ? 'open'
+      : session.status === 'closed' ? 'closed'
+      : 'pending';
+
+    if (matched.status === newStatus) continue;
+
+    const oldStatus = matched.status || null;
+    matched.status = newStatus;
+    matched.last_verified = new Date().toISOString().slice(0, 10);
+    statusChanges.push({ id: matched.id, title: matched.title, old: oldStatus, new: newStatus });
+    logger.info(`TLP status: ${matched.id} ${oldStatus} → ${newStatus}`);
+
+    if (newStatus === 'open' && oldStatus !== 'open') {
+      await fireWebhook({
+        event: 'programme_status_changed',
+        timestamp: new Date().toISOString(),
+        data: { id: matched.id, title: matched.title, message: 'ESA Academy course is now open for applications', old: oldStatus, new: newStatus },
+      });
+      await sendNewOpportunityAlert(matched, store).catch((e) =>
+        logger.error('Email alert error', { error: e.message })
+      );
+    }
+  }
+
+  if (statusChanges.length > 0) {
+    await deps.saveOpportunities();
+    logger.info(`TLP sync complete: ${statusChanges.length} statuses updated`);
+  } else {
+    logger.info('TLP sync complete: no status changes');
+  }
+  return { changed: statusChanges.length, updates: statusChanges };
+}
+
 async function flagStaleOpportunities(store, deps) {
   const cutoff = new Date(Date.now() - 90 * 86400000).toISOString().slice(0, 10);
   const staled = [];
@@ -403,6 +466,11 @@ export function startCron(store, deps) {
       const c = await handleEsaAcademyResult(esaResult, store, deps);
       changed.push(...c);
     } catch (e) { errors.push({ id: 'esa_academy', error: e.message }); }
+
+    try {
+      const tlpResult = await syncEsaTlpStatus(store, deps);
+      if (tlpResult.updates?.length) changed.push(...tlpResult.updates.map((u) => ({ id: u.id, field: 'status', old_value: u.old, new_value: u.new })));
+    } catch (e) { errors.push({ id: 'esa_tlp_status', error: e.message }); }
 
     try {
       const scResult = await scrapeShortCourseScholarship();
@@ -446,7 +514,7 @@ export function startCron(store, deps) {
       event: 'cron_summary',
       run_at: new Date().toISOString(),
       schedule: 'weekly',
-      total_scraped: COMPETITION_SCRAPERS.length + 4,
+      total_scraped: COMPETITION_SCRAPERS.length + 5,
       changed,
       new_discovered: newDiscovered,
       errors,

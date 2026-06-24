@@ -318,6 +318,64 @@ export async function scrapeCASSINI() {
   return { id: 'cassini-hackathon', blocked: false, dates, text: result.text.slice(0, 3000) };
 }
 
+// ── SOURCE N: ESA TLP Portfolio ──
+export async function scrapeEsaTlpPortfolio() {
+  logger.info('Scraping ESA Academy TLP Portfolio');
+  const result = await scrapePage(
+    'https://educationforms.esa.int/tlp/portfolio-of-esa-academy-training-sessions/',
+    'body',
+    25000
+  );
+  if (result.blocked) return { blocked: true, sessions: [] };
+  const sessions = parseTlpSessions(result.text || '');
+  logger.info(`TLP: parsed ${sessions.length} sessions`);
+  return { blocked: false, sessions };
+}
+
+function parseTlpSessions(text) {
+  const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
+  const STATUS_WORDS = { open: 'open', closed: 'closed', pending: 'pending' };
+  const MONTH_RE = /\b(january|february|march|april|may|june|july|august|september|october|november|december)\b/i;
+  const DATE_LINE_RE = /^\d{1,2}[\s–\-]|^\d{4}|^\s*\d{1,2}\s*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i;
+
+  // Strategy 1: section-based grouping
+  // The TLP page groups courses under Open / Pending / Closed section headers
+  let currentStatus = null;
+  const sessions = [];
+
+  for (const line of lines) {
+    const lower = line.toLowerCase();
+    if (STATUS_WORDS[lower]) {
+      currentStatus = STATUS_WORDS[lower];
+      continue;
+    }
+    if (!currentStatus) continue;
+    if (DATE_LINE_RE.test(line)) continue;
+    if (MONTH_RE.test(line) && /\d{4}/.test(line)) continue;
+    if (line.length < 15) continue;
+    sessions.push({ title: line, status: currentStatus });
+  }
+
+  if (sessions.length > 0) return sessions;
+
+  // Strategy 2: proximity-based (status word within 4 lines before a title)
+  for (let i = 0; i < lines.length; i++) {
+    const st = STATUS_WORDS[lines[i].toLowerCase()];
+    if (!st) continue;
+    for (let j = i - 1; j >= Math.max(0, i - 4); j--) {
+      const candidate = lines[j];
+      if (candidate.length < 15) continue;
+      if (DATE_LINE_RE.test(candidate)) continue;
+      if (MONTH_RE.test(candidate) && /\d{4}/.test(candidate)) continue;
+      if (STATUS_WORDS[candidate.toLowerCase()]) continue;
+      sessions.push({ title: candidate, status: st });
+      break;
+    }
+  }
+
+  return sessions;
+}
+
 // ── SOURCE L: BVSR Members ──
 export async function scrapeBvsrMembers() {
   logger.info('Scraping BVSR members');

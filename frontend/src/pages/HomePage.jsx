@@ -69,7 +69,7 @@ export default function HomePage() {
     if (funded) res = res.filter((o) => o.funding_available);
     if (teamBased) res = res.filter((o) => o.team_based);
     if (openAll) res = res.filter((o) => o.open_to_non_engineers);
-    if (openNow) res = res.filter((o) => o.deadline && daysUntil(o.deadline) >= 0);
+    if (openNow) res = res.filter((o) => (o.deadline && daysUntil(o.deadline) >= 0) || o.status === 'open');
     if (search) {
       const q = search.toLowerCase();
       res = res.filter(

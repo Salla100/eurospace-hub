@@ -8,7 +8,7 @@ export default function DeadlineStrip({ deadlines = [], onClickOpp }) {
   if (!deadlines.length) return null;
 
   return (
-    <div className="sticky top-14 z-30 border-b border-space-warn/30 bg-amber-950/40 backdrop-blur-sm">
+    <div className="sticky z-30 border-b border-space-warn/30 bg-amber-950/40 backdrop-blur-sm" style={{ top: 'var(--header-h, 56px)', transition: 'top 0.25s ease' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <button
           className="w-full flex items-center justify-between py-2 text-left"
