@@ -328,10 +328,6 @@ export async function scrapeEsaTlpPortfolio() {
   );
   if (result.blocked) return { blocked: true, sessions: [] };
 
-  logger.info(`TLP page text snippet: ${(result.text || '').slice(0, 400).replace(/\n+/g, ' ')}`);
-  const htmlIdx = (result.html || '').indexOf('Access to Space');
-  logger.info(`TLP HTML around table: ${(result.html || '').slice(Math.max(0, htmlIdx - 100), htmlIdx + 600).replace(/\s+/g, ' ')}`);
-
   // Try structured HTML table parsing first (preserves URLs)
   let sessions = parseTlpTable(result.html || '');
   if (sessions.length === 0) {

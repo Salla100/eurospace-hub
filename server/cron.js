@@ -73,6 +73,19 @@ async function handleEsaAcademyResult(result, store, deps) {
     const opp = store.opportunities.find((o) => o.id === matchedId);
     if (!opp) continue;
 
+    // Extract deadline from cycle text e.g. "Call for proposals open until 8 October 2026, 13:00 CEST"
+    const MONTH_MAP = { january:1,february:2,march:3,april:4,may:5,june:6,july:7,august:8,september:9,october:10,november:11,december:12 };
+    const dlMatch = cycleText.match(/until\s+(\d{1,2})\s+(\w+)\s+(\d{4})/i);
+    if (dlMatch) {
+      const month = MONTH_MAP[dlMatch[2].toLowerCase()];
+      if (month) {
+        const deadline = `${dlMatch[3]}-${String(month).padStart(2,'0')}-${String(dlMatch[1]).padStart(2,'0')}`;
+        if (deadline >= new Date().toISOString().slice(0, 10) && opp.deadline !== deadline) {
+          opp.deadline = deadline;
+        }
+      }
+    }
+
     const oldNotes = opp.deadline_notes;
     if (oldNotes !== cycleText) {
       opp.deadline_notes = cycleText;

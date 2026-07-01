@@ -170,7 +170,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://learn.esa.int/explore/space-debris-training-course",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "space-debris",
@@ -442,7 +442,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://learn.esa.int/explore/space-systems-engineering-training-course",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "systems-engineering",
@@ -803,7 +803,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://learn.esa.int/explore/human-space-physiology-training-course",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "space-medicine",
