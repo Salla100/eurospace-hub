@@ -3,6 +3,4 @@ frontend/node_modules/
 frontend/dist/
 .env
 server/scraper.log
-data/subscribers.json
-data/notifications_sent.json
-data/changes.log
+data/
