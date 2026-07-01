@@ -6,6 +6,7 @@ import { logger } from './scraper.js';
 import {
   scrapeEsaAcademy,
   scrapeEsaTlpPortfolio,
+  scrapeLearnEsaCourseDeadline,
   scrapeShortCourseScholarship,
   scrapeAcademicScholarship,
   scrapeConferenceSponsorshipPage,
@@ -440,13 +441,39 @@ async function syncEsaTlpStatus(store, deps) {
       : session.status === 'closed' ? 'closed'
       : 'pending';
 
-    if (matched.status === newStatus) continue;
-
     const oldStatus = matched.status || null;
-    matched.status = newStatus;
-    matched.last_verified = new Date().toISOString().slice(0, 10);
-    statusChanges.push({ id: matched.id, title: matched.title, old: oldStatus, new: newStatus });
-    logger.info(`TLP status: ${matched.id} ${oldStatus} → ${newStatus}`);
+    const statusChanged = matched.status !== newStatus;
+
+    // Always update scrape_url if the TLP page gave us an individual course URL
+    if (session.url && matched.scrape_url !== session.url) {
+      matched.scrape_url = session.url;
+    }
+
+    if (statusChanged) {
+      matched.status = newStatus;
+      matched.last_verified = new Date().toISOString().slice(0, 10);
+      statusChanges.push({ id: matched.id, title: matched.title, old: oldStatus, new: newStatus });
+      logger.info(`TLP status: ${matched.id} ${oldStatus} → ${newStatus}`);
+    }
+
+    // For open courses, scrape the individual page for the registration deadline
+    if (newStatus === 'open' && session.url) {
+      try {
+        const deadline = await scrapeLearnEsaCourseDeadline(session.url);
+        if (deadline && deadline !== matched.deadline) {
+          logger.info(`TLP deadline: ${matched.id} → ${deadline}`);
+          matched.deadline = deadline;
+          if (!statusChanged) matched.last_verified = new Date().toISOString().slice(0, 10);
+          if (!statusChanges.find(c => c.id === matched.id)) {
+            statusChanges.push({ id: matched.id, title: matched.title, old: oldStatus, new: newStatus });
+          }
+        }
+      } catch (e) {
+        logger.warn(`TLP deadline scrape failed for ${matched.id}: ${e.message}`);
+      }
+    }
+
+    if (!statusChanged) continue;
 
     if (newStatus === 'open' && oldStatus !== 'open') {
       store.discovered = store.discovered || [];
@@ -455,7 +482,7 @@ async function syncEsaTlpStatus(store, deps) {
         type: 'status_open',
         name: matched.title,
         provider: 'ESA Academy',
-        source_url: matched.url || matched.scrape_url || '',
+        source_url: session.url || matched.url || '',
         details: `Status changed from ${oldStatus || 'unknown'} to open`,
         discovered_at: new Date().toISOString(),
         seen: false,

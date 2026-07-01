@@ -327,38 +327,104 @@ export async function scrapeEsaTlpPortfolio() {
     25000
   );
   if (result.blocked) return { blocked: true, sessions: [] };
-  const sessions = parseTlpSessions(result.text || '');
-  logger.info(`TLP: parsed ${sessions.length} sessions`);
+
+  // Try structured HTML table parsing first (preserves URLs)
+  let sessions = parseTlpTable(result.html || '');
+  if (sessions.length === 0) {
+    sessions = parseTlpSessions(result.text || '');
+  }
+  logger.info(`TLP: parsed ${sessions.length} sessions (${sessions.filter(s => s.url).length} with URLs)`);
   return { blocked: false, sessions };
 }
 
+// Parse the TLP portfolio HTML table — extracts title, href, and status per row
+function parseTlpTable(html) {
+  const sessions = [];
+  const STATUS_SET = new Set(['open', 'closed', 'pending']);
+
+  // Strategy 1: standard <tr> rows
+  const rowRe = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
+  let rowMatch;
+  while ((rowMatch = rowRe.exec(html)) !== null) {
+    const rowHtml = rowMatch[1];
+
+    // First <a> with a non-trivial href is the course link
+    const linkMatch = /<a[^>]+href="([^"#][^"]*)"[^>]*>([\s\S]*?)<\/a>/i.exec(rowHtml);
+    if (!linkMatch) continue;
+
+    const rawUrl = linkMatch[1];
+    const title = linkMatch[2].replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').trim();
+    if (!title || title.length < 10) continue;
+
+    // Skip non-course links (anchors, images, navigation)
+    if (rawUrl.startsWith('#') || rawUrl.includes('javascript') || rawUrl.includes('/wp-')) continue;
+
+    // Find status word in the row (strip all tags first)
+    const rowText = rowHtml.replace(/<[^>]+>/g, ' ').toLowerCase();
+    let status = null;
+    for (const sw of STATUS_SET) {
+      if (new RegExp(`\\b${sw}\\b`).test(rowText)) { status = sw; break; }
+    }
+    if (!status) continue;
+
+    // Resolve relative URLs
+    const url = rawUrl.startsWith('http') ? rawUrl
+      : rawUrl.startsWith('/') ? `https://educationforms.esa.int${rawUrl}`
+      : null;
+
+    sessions.push({ title, url, status });
+  }
+
+  if (sessions.length > 0) return sessions;
+
+  // Strategy 2: find all course-like <a> tags and check context for status
+  const linkRe = /<a[^>]+href="([^"#][^"]*)"[^>]*>([\s\S]*?)<\/a>/gi;
+  let linkMatch;
+  while ((linkMatch = linkRe.exec(html)) !== null) {
+    const rawUrl = linkMatch[1];
+    const title = linkMatch[2].replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').trim();
+    if (!title || title.length < 15) continue;
+    if (rawUrl.includes('/wp-') || rawUrl.includes('javascript')) continue;
+
+    const start = Math.max(0, linkMatch.index - 300);
+    const end = Math.min(html.length, linkMatch.index + linkMatch[0].length + 300);
+    const context = html.slice(start, end).replace(/<[^>]+>/g, ' ').toLowerCase();
+
+    let status = null;
+    for (const sw of STATUS_SET) {
+      if (new RegExp(`\\b${sw}\\b`).test(context)) { status = sw; break; }
+    }
+    if (!status) continue;
+
+    const url = rawUrl.startsWith('http') ? rawUrl
+      : rawUrl.startsWith('/') ? `https://educationforms.esa.int${rawUrl}`
+      : null;
+    sessions.push({ title, url, status });
+  }
+
+  return sessions;
+}
+
+// Text-only fallback parser (no URLs, but robust for section-based layouts)
 function parseTlpSessions(text) {
   const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
   const STATUS_WORDS = { open: 'open', closed: 'closed', pending: 'pending' };
   const MONTH_RE = /\b(january|february|march|april|may|june|july|august|september|october|november|december)\b/i;
   const DATE_LINE_RE = /^\d{1,2}[\s–\-]|^\d{4}|^\s*\d{1,2}\s*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i;
 
-  // Strategy 1: section-based grouping
-  // The TLP page groups courses under Open / Pending / Closed section headers
   let currentStatus = null;
   const sessions = [];
-
   for (const line of lines) {
     const lower = line.toLowerCase();
-    if (STATUS_WORDS[lower]) {
-      currentStatus = STATUS_WORDS[lower];
-      continue;
-    }
+    if (STATUS_WORDS[lower]) { currentStatus = STATUS_WORDS[lower]; continue; }
     if (!currentStatus) continue;
     if (DATE_LINE_RE.test(line)) continue;
     if (MONTH_RE.test(line) && /\d{4}/.test(line)) continue;
     if (line.length < 15) continue;
-    sessions.push({ title: line, status: currentStatus });
+    sessions.push({ title: line, status: currentStatus, url: null });
   }
-
   if (sessions.length > 0) return sessions;
 
-  // Strategy 2: proximity-based (status word within 4 lines before a title)
   for (let i = 0; i < lines.length; i++) {
     const st = STATUS_WORDS[lines[i].toLowerCase()];
     if (!st) continue;
@@ -368,12 +434,22 @@ function parseTlpSessions(text) {
       if (DATE_LINE_RE.test(candidate)) continue;
       if (MONTH_RE.test(candidate) && /\d{4}/.test(candidate)) continue;
       if (STATUS_WORDS[candidate.toLowerCase()]) continue;
-      sessions.push({ title: candidate, status: st });
+      sessions.push({ title: candidate, status: st, url: null });
       break;
     }
   }
-
   return sessions;
+}
+
+// Scrape an individual ESA Academy course page for its registration deadline
+export async function scrapeLearnEsaCourseDeadline(url) {
+  const result = await scrapePage(url, 'body', 20000);
+  if (result.blocked || !result.text) return null;
+  const dates = extractDatesFromText(result.text);
+  const upcoming = dates.filter(d => d.near_deadline && new Date(d.date) > new Date());
+  if (!upcoming.length) return null;
+  upcoming.sort((a, b) => new Date(a.date) - new Date(b.date));
+  return upcoming[0].date;
 }
 
 // ── SOURCE L: BVSR Members ──
