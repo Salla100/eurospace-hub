@@ -409,7 +409,7 @@ async function syncSpaceTrainingCatalogue(store, deps) {
   return newDiscovered;
 }
 
-async function syncEsaTlpStatus(store, deps) {
+export async function syncEsaTlpStatus(store, deps) {
   logger.info('ESA TLP portfolio status sync starting');
   const result = await scrapeEsaTlpPortfolio();
   if (result.blocked) {

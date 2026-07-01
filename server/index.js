@@ -6,7 +6,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs-extra';
 import { createRequire } from 'module';
-import { startCron } from './cron.js';
+import { startCron, syncEsaTlpStatus } from './cron.js';
 import { scrapeById, scrapeBatch } from './scraper.js';
 import { sendTestEmail } from './notifier.js';
 import winston from 'winston';
@@ -348,6 +348,16 @@ app.post('/api/test-email', requireAdmin, async (req, res) => {
   try {
     await sendTestEmail(req.body.email || process.env.SMTP_USER);
     res.json({ success: true });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// ── POST /api/sync/tlp (admin) — manual trigger for TLP status + deadline sync ──
+app.post('/api/sync/tlp', requireAdmin, async (req, res) => {
+  try {
+    const result = await syncEsaTlpStatus(store, { saveOpportunities, saveDiscovered, logChange });
+    res.json({ ok: true, ...result });
   } catch (e) {
     res.status(500).json({ error: e.message });
   }

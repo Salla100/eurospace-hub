@@ -136,6 +136,8 @@ export const api = {
       body: JSON.stringify({ email }),
     }),
   health: () => request('/health'),
+  syncTlp: (secret) =>
+    request('/api/sync/tlp', { method: 'POST', headers: { 'x-admin-secret': secret } }),
   getDiscovered: (secret) =>
     request('/api/discovered', { headers: { 'x-admin-secret': secret } }),
   dismissDiscovered: (ids, secret) =>

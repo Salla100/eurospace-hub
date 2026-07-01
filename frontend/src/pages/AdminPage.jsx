@@ -411,6 +411,16 @@ function SettingsTab({ secret, onToast }) {
     catch (e) { onToast(e.message, 'error'); }
   }
 
+  const [tlpRunning, setTlpRunning] = useState(false);
+  async function handleSyncTlp() {
+    setTlpRunning(true);
+    try {
+      const r = await api.syncTlp(secret);
+      onToast(`TLP sync done — ${r.changed ?? 0} status/deadline updates`, 'success');
+    } catch (e) { onToast(e.message, 'error'); }
+    finally { setTlpRunning(false); }
+  }
+
   return (
     <div className="max-w-lg space-y-5">
       <div>
@@ -432,6 +442,22 @@ function SettingsTab({ secret, onToast }) {
       <button onClick={handleSave} disabled={saving} className="px-6 py-2.5 rounded-xl bg-space-accent text-white text-sm font-semibold hover:bg-blue-500 transition-colors disabled:opacity-60">
         {saving ? 'Saving…' : 'Save Settings'}
       </button>
+
+      <div className="pt-4 border-t border-space-border">
+        <p className="text-sm text-space-muted font-medium mb-3">Manual Triggers</p>
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center justify-between p-3 rounded-lg bg-space-card border border-space-border">
+            <div>
+              <p className="text-sm text-space-text font-medium">ESA Academy TLP Sync</p>
+              <p className="text-xs text-space-muted mt-0.5">Scrapes TLP portfolio → updates statuses + deadlines for open courses</p>
+            </div>
+            <button onClick={handleSyncTlp} disabled={tlpRunning}
+              className="ml-4 px-4 py-2 rounded-lg border border-space-border text-xs text-slate-400 hover:border-space-accent hover:text-space-accent transition-colors disabled:opacity-60 whitespace-nowrap shrink-0">
+              {tlpRunning ? 'Running…' : 'Run Now'}
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
