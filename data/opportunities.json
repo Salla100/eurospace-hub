@@ -34,7 +34,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "concurrent-design",
@@ -80,7 +80,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "CubeSat",
@@ -125,7 +125,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "spacecraft-testing",
@@ -170,7 +170,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": "https://learn.esa.int/explore/space-debris-training-course",
     "scrape_selector": null,
     "tags": [
       "space-debris",
@@ -214,7 +214,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "robotics",
@@ -261,7 +261,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "earth-observation",
@@ -306,7 +306,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "GNSS",
@@ -352,7 +352,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "satcom",
@@ -396,7 +396,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "product-assurance",
@@ -442,7 +442,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": "https://learn.esa.int/explore/space-systems-engineering-training-course",
     "scrape_selector": null,
     "tags": [
       "systems-engineering",
@@ -486,7 +486,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "space-weather",
@@ -531,7 +531,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "space-law",
@@ -577,7 +577,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "ECSS",
@@ -621,7 +621,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "technology-transfer",
@@ -667,7 +667,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "life-support",
@@ -713,7 +713,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "launchers",
@@ -757,7 +757,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "space-policy",
@@ -803,7 +803,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": "https://learn.esa.int/explore/human-space-physiology-training-course",
     "scrape_selector": null,
     "tags": [
       "space-medicine",
@@ -851,7 +851,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "CubeSat",
@@ -895,7 +895,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "microgravity",
@@ -941,7 +941,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "spacecraft-comms",
@@ -987,7 +987,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-07-01",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "cybersecurity",
@@ -1032,7 +1032,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-05-28",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "rocketry",
@@ -1121,7 +1121,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-05-28",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "CubeSat",
@@ -1166,7 +1166,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-05-28",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "CubeSat",
@@ -1210,7 +1210,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-05-28",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "hardware-testing",
@@ -1256,7 +1256,7 @@
     "featured": false,
     "needs_review": false,
     "last_verified": "2026-05-28",
-    "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
+    "scrape_url": null,
     "scrape_selector": null,
     "tags": [
       "parabolic-flight",
@@ -4822,7 +4822,7 @@
     "description": "Hands-on training week focused on CubeSat hardware and operations. Students gain practical experience with real CubeSat components and subsystems at ESEC-Galaxia.",
     "url": "https://www.esa.int/Education/ESA_Academy/CubeSat_Hands-On_Training_Week",
     "application_url": "https://learn.esa.int/explore/cubesat-hands-on-training-week",
-    "deadline": null,
+    "deadline": "2026-07-19",
     "deadline_recurring": true,
     "deadline_notes": null,
     "event_date": "2026-10-26",
@@ -4895,7 +4895,7 @@
     "funding_tags": [
       "esa-sponsored"
     ],
-    "scrape_url": null,
+    "scrape_url": "https://learn.esa.int/explore/ladybird-guide-spacecraft-operations-training-course",
     "last_verified": "2026-07-01",
     "needs_review": false,
     "status": "open"
