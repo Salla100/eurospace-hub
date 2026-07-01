@@ -329,6 +329,7 @@ export async function scrapeEsaTlpPortfolio() {
   if (result.blocked) return { blocked: true, sessions: [] };
 
   logger.info(`TLP page text snippet: ${(result.text || '').slice(0, 400).replace(/\n+/g, ' ')}`);
+  logger.info(`TLP HTML snippet: ${(result.html || '').slice(0, 800).replace(/\s+/g, ' ')}`);
 
   // Try structured HTML table parsing first (preserves URLs)
   let sessions = parseTlpTable(result.html || '');
