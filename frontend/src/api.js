@@ -136,4 +136,12 @@ export const api = {
       body: JSON.stringify({ email }),
     }),
   health: () => request('/health'),
+  getDiscovered: (secret) =>
+    request('/api/discovered', { headers: { 'x-admin-secret': secret } }),
+  dismissDiscovered: (ids, secret) =>
+    request('/api/discovered/dismiss', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-admin-secret': secret },
+      body: JSON.stringify({ ids: Array.isArray(ids) ? ids : [ids] }),
+    }),
 };

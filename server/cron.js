@@ -229,6 +229,17 @@ async function syncBvsrMembers(store, deps) {
         discovered_at: new Date().toISOString(),
       });
       newDiscovered.push({ type: 'bvsr_member', name: member.name, source_url: 'https://bvsr.space/' });
+      store.discovered = store.discovered || [];
+      store.discovered.push({
+        id: `${Date.now()}-${slug}`,
+        type: 'bvsr_member',
+        name: member.name,
+        provider: 'BVSR',
+        source_url: 'https://bvsr.space/',
+        details: member.description || '',
+        discovered_at: new Date().toISOString(),
+        seen: false,
+      });
       logger.info(`New BVSR member discovered: ${member.name}`);
     } else {
       // Update logo/website if changed
@@ -244,6 +255,7 @@ async function syncBvsrMembers(store, deps) {
   await fs.writeJson(path.join(DATA_DIR, 'config.json'), store.config, { spaces: 2 });
 
   if (newDiscovered.length > 0) {
+    await deps.saveDiscovered?.();
     await fireWebhook({
       event: 'new_discovered',
       timestamp: new Date().toISOString(),
@@ -282,6 +294,17 @@ async function syncNorstecMembers(store, deps) {
         discovered_at: new Date().toISOString(),
       });
       newDiscovered.push({ type: 'norstec_member', name: member.name, source_url: 'https://norstec.no/' });
+      store.discovered = store.discovered || [];
+      store.discovered.push({
+        id: `${Date.now()}-${slug}`,
+        type: 'norstec_member',
+        name: member.name,
+        provider: 'NORSTEC',
+        source_url: 'https://norstec.no/',
+        details: member.specialization || '',
+        discovered_at: new Date().toISOString(),
+        seen: false,
+      });
       logger.info(`New NORSTEC member discovered: ${member.name}`);
     }
   }
@@ -294,6 +317,7 @@ async function syncNorstecMembers(store, deps) {
   await fs.writeJson(path.join(DATA_DIR, 'config.json'), store.config, { spaces: 2 });
 
   if (newDiscovered.length > 0) {
+    await deps.saveDiscovered?.();
     await fireWebhook({
       event: 'new_discovered',
       timestamp: new Date().toISOString(),
@@ -309,7 +333,7 @@ async function syncNorstecMembers(store, deps) {
 const SPACE_TRAINING_API = 'https://training.spaceskills.org/api/v2/opportunities';
 const SPACE_TRAINING_TYPES = 'Workshop;Short course;Seminar';
 
-async function syncSpaceTrainingCatalogue(store) {
+async function syncSpaceTrainingCatalogue(store, deps) {
   logger.info('Space Training Catalogue sync starting');
   const url =
     `${SPACE_TRAINING_API}?q[price_gbp_lteq]=0` +
@@ -362,6 +386,25 @@ async function syncSpaceTrainingCatalogue(store) {
   }
 
   logger.info(`Space Training sync complete: ${items.length} free items checked, ${newDiscovered.length} new`);
+
+  if (newDiscovered.length > 0) {
+    store.discovered = store.discovered || [];
+    for (const item of newDiscovered) {
+      const slug = item.name.toLowerCase().replace(/[^a-z0-9]/g, '-').slice(0, 40);
+      store.discovered.push({
+        id: `${Date.now()}-${slug}`,
+        type: item.type,
+        name: item.name,
+        provider: item.provider || '',
+        source_url: item.source_url || '',
+        details: [item.training_type, item.topics].filter(Boolean).join(' · '),
+        discovered_at: new Date().toISOString(),
+        seen: false,
+      });
+    }
+    await deps?.saveDiscovered?.();
+  }
+
   return newDiscovered;
 }
 
@@ -406,6 +449,17 @@ async function syncEsaTlpStatus(store, deps) {
     logger.info(`TLP status: ${matched.id} ${oldStatus} → ${newStatus}`);
 
     if (newStatus === 'open' && oldStatus !== 'open') {
+      store.discovered = store.discovered || [];
+      store.discovered.push({
+        id: `${Date.now()}-${matched.id}`,
+        type: 'status_open',
+        name: matched.title,
+        provider: 'ESA Academy',
+        source_url: matched.url || matched.scrape_url || '',
+        details: `Status changed from ${oldStatus || 'unknown'} to open`,
+        discovered_at: new Date().toISOString(),
+        seen: false,
+      });
       await fireWebhook({
         event: 'programme_status_changed',
         timestamp: new Date().toISOString(),
@@ -419,6 +473,9 @@ async function syncEsaTlpStatus(store, deps) {
 
   if (statusChanges.length > 0) {
     await deps.saveOpportunities();
+    if (statusChanges.some((c) => c.new === 'open')) {
+      await deps.saveDiscovered?.();
+    }
     logger.info(`TLP sync complete: ${statusChanges.length} statuses updated`);
   } else {
     logger.info('TLP sync complete: no status changes');
@@ -571,7 +628,7 @@ export function startCron(store, deps) {
       errors.push({ id: 'norstec_sync', error: e.message });
       return [];
     });
-    const spaceTrainingNew = await syncSpaceTrainingCatalogue(store).catch((e) => {
+    const spaceTrainingNew = await syncSpaceTrainingCatalogue(store, deps).catch((e) => {
       logger.error('Space Training sync error', { error: e.message });
       errors.push({ id: 'space_training_sync', error: e.message });
       return [];

@@ -37,6 +37,7 @@ let store = {
   members_europe: [],
   subscribers: [],
   notifications_sent: [],
+  discovered: [],
   config: {},
   loaded_at: null
 };
@@ -48,6 +49,7 @@ async function loadData() {
   store.members_europe = await fs.readJson(path.join(DATA_DIR, 'members_europe.json')).catch(() => []);
   store.subscribers = await fs.readJson(path.join(DATA_DIR, 'subscribers.json')).catch(() => []);
   store.notifications_sent = await fs.readJson(path.join(DATA_DIR, 'notifications_sent.json')).catch(() => []);
+  store.discovered = await fs.readJson(path.join(DATA_DIR, 'discovered.json')).catch(() => []);
   store.config = await fs.readJson(path.join(DATA_DIR, 'config.json')).catch(() => ({}));
   store.loaded_at = new Date().toISOString();
   logger.info(`Data loaded: ${store.opportunities.length} opportunities, ${store.members_bvsr.length} BVSR, ${store.members_norstec.length} NORSTEC, ${store.members_europe.length} Europe`);
@@ -71,6 +73,10 @@ export async function saveSubscribers() {
 
 export async function saveNotificationsSent() {
   await fs.writeJson(path.join(DATA_DIR, 'notifications_sent.json'), store.notifications_sent, { spaces: 2 });
+}
+
+export async function saveDiscovered() {
+  await fs.writeJson(path.join(DATA_DIR, 'discovered.json'), store.discovered, { spaces: 2 });
 }
 
 export async function logChange(entry) {
@@ -347,6 +353,26 @@ app.post('/api/test-email', requireAdmin, async (req, res) => {
   }
 });
 
+// ── GET /api/discovered (admin) ──
+app.use('/api/discovered', adminLimiter);
+app.get('/api/discovered', requireAdmin, (req, res) => {
+  const unseen = store.discovered.filter((d) => !d.seen);
+  res.json({ total: store.discovered.length, unseen: unseen.length, items: unseen });
+});
+
+// ── POST /api/discovered/dismiss (admin) ──
+app.post('/api/discovered/dismiss', requireAdmin, async (req, res) => {
+  const { id, all } = req.body;
+  if (all) {
+    store.discovered.forEach((d) => { d.seen = true; });
+  } else if (id) {
+    const item = store.discovered.find((d) => d.id === id);
+    if (item) item.seen = true;
+  }
+  await saveDiscovered();
+  res.json({ ok: true, unseen: store.discovered.filter((d) => !d.seen).length });
+});
+
 // ── GET /api/subscribers (admin) ──
 app.get('/api/subscribers', requireAdmin, (req, res) => {
   const masked = store.subscribers.map(s => ({
@@ -365,7 +391,7 @@ const PORT = process.env.PORT || 3001;
 
 async function main() {
   await loadData();
-  startCron(store, { saveOpportunities, saveMembersBvsr, saveMembersNorstec, saveNotificationsSent, logChange });
+  startCron(store, { saveOpportunities, saveMembersBvsr, saveMembersNorstec, saveNotificationsSent, saveDiscovered, logChange });
   app.listen(PORT, () => logger.info(`EuroSpace API running on port ${PORT}`));
 }
 

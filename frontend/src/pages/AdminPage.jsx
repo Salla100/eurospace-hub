@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { RefreshCw, Download, CheckCircle, AlertCircle, Lock, Eye, EyeOff, Settings, Users, FileText, Server, Database } from 'lucide-react';
+import { RefreshCw, Download, CheckCircle, AlertCircle, Lock, Eye, EyeOff, Settings, Users, FileText, Server, Database, Inbox, ExternalLink, X } from 'lucide-react';
 import { api } from '../api.js';
 import { formatDate, daysUntil } from '../utils.js';
 
@@ -436,12 +436,113 @@ function SettingsTab({ secret, onToast }) {
   );
 }
 
+// ─── Tab 6: Inbox ─────────────────────────────────────────────────────────────
+function InboxTab({ secret, onToast, inboxCount, setInboxCount }) {
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const TYPE_LABELS = {
+    opportunity: { label: 'New Course', color: 'text-space-accent bg-space-accent/10 border-space-accent/30' },
+    bvsr_member: { label: 'BVSR Member', color: 'text-purple-400 bg-purple-400/10 border-purple-400/30' },
+    norstec_member: { label: 'NORSTEC Member', color: 'text-teal-400 bg-teal-400/10 border-teal-400/30' },
+    status_open: { label: 'Now Open', color: 'text-green-400 bg-green-400/10 border-green-400/30' },
+  };
+
+  async function load() {
+    setLoading(true);
+    try {
+      const data = await api.getDiscovered(secret);
+      const unseen = data?.items || [];
+      setItems(unseen);
+      setInboxCount(unseen.length);
+    } catch (e) { onToast(e.message, 'error'); }
+    finally { setLoading(false); }
+  }
+
+  useEffect(() => { load(); }, []);
+
+  async function dismiss(id) {
+    try {
+      await api.dismissDiscovered(id, secret);
+      const next = items.filter((i) => i.id !== id);
+      setItems(next);
+      setInboxCount(next.length);
+    } catch (e) { onToast(e.message, 'error'); }
+  }
+
+  async function dismissAll() {
+    if (!items.length) return;
+    try {
+      await api.dismissDiscovered(items.map((i) => i.id), secret);
+      setItems([]);
+      setInboxCount(0);
+      onToast('All items dismissed', 'success');
+    } catch (e) { onToast(e.message, 'error'); }
+  }
+
+  if (loading) return <p className="text-space-muted text-sm">Loading inbox…</p>;
+
+  return (
+    <div className="space-y-4 max-w-3xl">
+      <div className="flex items-center justify-between">
+        <p className="text-space-muted text-sm">
+          {items.length === 0 ? 'No new items' : `${items.length} new item${items.length > 1 ? 's' : ''} discovered`}
+        </p>
+        {items.length > 1 && (
+          <button onClick={dismissAll} className="text-xs text-slate-400 hover:text-space-accent transition-colors underline">
+            Dismiss all
+          </button>
+        )}
+      </div>
+
+      {items.length === 0 ? (
+        <div className="flex flex-col items-center py-16 text-space-muted gap-3">
+          <Inbox size={36} className="opacity-30" />
+          <p className="text-sm">Inbox is empty</p>
+        </div>
+      ) : (
+        <div className="space-y-3">
+          {items.map((item) => {
+            const meta = TYPE_LABELS[item.type] || { label: item.type, color: 'text-slate-400 bg-slate-400/10 border-slate-400/30' };
+            return (
+              <div key={item.id} className="flex items-start gap-3 p-4 rounded-xl bg-space-card border border-space-border">
+                <span className={`shrink-0 mt-0.5 text-xs font-semibold px-2 py-0.5 rounded-full border ${meta.color}`}>
+                  {meta.label}
+                </span>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-medium text-space-text truncate">{item.name}</p>
+                  {item.provider && <p className="text-xs text-space-muted mt-0.5">{item.provider}</p>}
+                  {item.details && <p className="text-xs text-slate-500 mt-0.5 truncate">{item.details}</p>}
+                  <p className="text-xs text-slate-600 mt-1">{new Date(item.discovered_at).toLocaleDateString()}</p>
+                </div>
+                <div className="flex items-center gap-2 shrink-0">
+                  {item.source_url && (
+                    <a href={item.source_url} target="_blank" rel="noopener noreferrer"
+                      className="p-1.5 rounded-lg text-slate-500 hover:text-space-accent hover:bg-space-accent/10 transition-colors">
+                      <ExternalLink size={14} />
+                    </a>
+                  )}
+                  <button onClick={() => dismiss(item.id)}
+                    className="p-1.5 rounded-lg text-slate-500 hover:text-space-danger hover:bg-red-900/20 transition-colors">
+                    <X size={14} />
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ─── Main Admin Page ──────────────────────────────────────────────────────────
 export default function AdminPage() {
   const [secret, setSecret] = useState('');
   const [tab, setTab] = useState('opportunities');
   const [opportunities, setOpportunities] = useState([]);
   const [toast, setToast] = useState({ msg: '', type: 'info' });
+  const [inboxCount, setInboxCount] = useState(0);
 
   function showToast(msg, type = 'info') {
     setToast({ msg, type });
@@ -451,12 +552,16 @@ export default function AdminPage() {
   useEffect(() => {
     if (!secret) return;
     api.getOpportunities().then(setOpportunities).catch(console.error);
+    api.getDiscovered(secret)
+      .then((data) => setInboxCount(data?.unseen || 0))
+      .catch(() => {});
   }, [secret]);
 
   if (!secret) return <LoginScreen onLogin={setSecret} />;
 
   const TABS = [
     { id: 'opportunities', label: 'Opportunities', icon: <Database size={14} /> },
+    { id: 'inbox', label: 'Inbox', icon: <Inbox size={14} />, badge: inboxCount },
     { id: 'changes', label: 'Changes', icon: <FileText size={14} /> },
     { id: 'logs', label: 'Scraper Log', icon: <Server size={14} /> },
     { id: 'members', label: 'Members', icon: <Users size={14} /> },
@@ -484,6 +589,11 @@ export default function AdminPage() {
             }`}
           >
             {t.icon}{t.label}
+            {t.badge > 0 && (
+              <span className="flex items-center justify-center w-4 h-4 rounded-full bg-space-accent text-white text-xs leading-none font-bold">
+                {t.badge}
+              </span>
+            )}
           </button>
         ))}
       </div>
@@ -491,6 +601,7 @@ export default function AdminPage() {
       {/* Tab content */}
       <div>
         {tab === 'opportunities' && <OpportunitiesTab opportunities={opportunities} secret={secret} onToast={showToast} />}
+        {tab === 'inbox' && <InboxTab secret={secret} onToast={showToast} inboxCount={inboxCount} setInboxCount={setInboxCount} />}
         {tab === 'changes' && <ChangesTab />}
         {tab === 'logs' && <ScraperLogTab secret={secret} />}
         {tab === 'members' && <MembersTab secret={secret} onToast={showToast} />}
