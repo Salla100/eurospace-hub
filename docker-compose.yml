@@ -30,6 +30,17 @@ services:
     networks:
       - internal
 
+  portainer:
+    image: portainer/portainer-ce:latest
+    ports:
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    restart: unless-stopped
+    networks:
+      - internal
+
   cloudflared:
     image: cloudflare/cloudflared:latest
     command: tunnel --no-autoupdate run
@@ -45,6 +56,10 @@ services:
         max-file: "3"
     networks:
       - internal
+
+volumes:
+  portainer_data:
+    external: true
 
 networks:
   internal:
