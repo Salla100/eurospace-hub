@@ -407,38 +407,33 @@ function parseTlpTable(html) {
   return sessions;
 }
 
-// Text-only fallback parser (no URLs, but robust for section-based layouts)
+// Text parser — handles flat table rows: "Title  Open  19 Oct 2026"
 function parseTlpSessions(text) {
   const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
-  const STATUS_WORDS = { open: 'open', closed: 'closed', pending: 'pending' };
-  const MONTH_RE = /\b(january|february|march|april|may|june|july|august|september|october|november|december)\b/i;
-  const DATE_LINE_RE = /^\d{1,2}[\s–\-]|^\d{4}|^\s*\d{1,2}\s*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i;
-
-  let currentStatus = null;
   const sessions = [];
+
+  // Strategy 1: flat row — title followed by status keyword inline
+  // e.g. "Access to Space Training Course (Launchers) Open 19 – 23 October 2026"
+  const ROW_RE = /^(.+?)\s+(Open|Closed|Pending)(?:\s|$)/i;
   for (const line of lines) {
-    const lower = line.toLowerCase();
-    if (STATUS_WORDS[lower]) { currentStatus = STATUS_WORDS[lower]; continue; }
-    if (!currentStatus) continue;
-    if (DATE_LINE_RE.test(line)) continue;
-    if (MONTH_RE.test(line) && /\d{4}/.test(line)) continue;
-    if (line.length < 15) continue;
-    sessions.push({ title: line, status: currentStatus, url: null });
+    const m = line.match(ROW_RE);
+    if (!m) continue;
+    const title = m[1].trim();
+    if (title.length < 10) continue;
+    sessions.push({ title, status: m[2].toLowerCase(), url: null });
   }
   if (sessions.length > 0) return sessions;
 
-  for (let i = 0; i < lines.length; i++) {
-    const st = STATUS_WORDS[lines[i].toLowerCase()];
-    if (!st) continue;
-    for (let j = i - 1; j >= Math.max(0, i - 4); j--) {
-      const candidate = lines[j];
-      if (candidate.length < 15) continue;
-      if (DATE_LINE_RE.test(candidate)) continue;
-      if (MONTH_RE.test(candidate) && /\d{4}/.test(candidate)) continue;
-      if (STATUS_WORDS[candidate.toLowerCase()]) continue;
-      sessions.push({ title: candidate, status: st, url: null });
-      break;
-    }
+  // Strategy 2: section headers ("Open" / "Closed" / "Pending" as standalone lines)
+  const STATUS_WORDS = { open: 'open', closed: 'closed', pending: 'pending' };
+  const MONTH_RE = /\b(january|february|march|april|may|june|july|august|september|october|november|december)\b/i;
+  const DATE_LINE_RE = /^\d{1,2}[\s–\-]|^\d{4}/i;
+  let currentStatus = null;
+  for (const line of lines) {
+    const lower = line.toLowerCase();
+    if (STATUS_WORDS[lower]) { currentStatus = STATUS_WORDS[lower]; continue; }
+    if (!currentStatus || DATE_LINE_RE.test(line) || (MONTH_RE.test(line) && /\d{4}/.test(line)) || line.length < 15) continue;
+    sessions.push({ title: line, status: currentStatus, url: null });
   }
   return sessions;
 }
