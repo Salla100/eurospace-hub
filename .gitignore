@@ -3,4 +3,9 @@ frontend/node_modules/
 frontend/dist/
 .env
 server/scraper.log
-data/
+data/subscribers.json
+data/notifications_sent.json
+data/changes.log
+data/discovered.json
+data/config.json
+data/esa_scholarship_programmes.json

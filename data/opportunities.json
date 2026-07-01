@@ -33,7 +33,7 @@
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -42,7 +42,8 @@
       "CDF",
       "COMET",
       "teamwork"
-    ]
+    ],
+    "status": "closed"
   },
   {
     "id": "esa-cubesat-concurrent-engineering-workshop",
@@ -78,7 +79,7 @@
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -86,7 +87,8 @@
       "concurrent-engineering",
       "AIV",
       "smallsat"
-    ]
+    ],
+    "status": "pending"
   },
   {
     "id": "esa-spacecraft-testing-workshop",
@@ -122,7 +124,7 @@
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -130,7 +132,8 @@
       "cleanroom",
       "environmental-testing",
       "hardware"
-    ]
+    ],
+    "status": "closed"
   },
   {
     "id": "esa-space-debris-training-course",
@@ -166,7 +169,7 @@
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -210,7 +213,7 @@
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -221,7 +224,8 @@
       "ExoMy",
       "rover",
       "ESTEC"
-    ]
+    ],
+    "status": "pending"
   },
   {
     "id": "esa-earth-observation-remote-sensing-workshop",
@@ -256,7 +260,7 @@
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -265,7 +269,8 @@
       "Sentinel",
       "Copernicus",
       "Galileo"
-    ]
+    ],
+    "status": "pending"
   },
   {
     "id": "esa-navigation-galileo-training-course",
@@ -300,7 +305,7 @@
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -309,7 +314,8 @@
       "navigation",
       "PNT",
       "LEO"
-    ]
+    ],
+    "status": "closed"
   },
   {
     "id": "esa-satellite-communications-training-course",
@@ -345,7 +351,7 @@
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -354,7 +360,8 @@
       "antennas",
       "ESEC-Redu",
       "ground-station"
-    ]
+    ],
+    "status": "pending"
   },
   {
     "id": "esa-product-assurance-course",
@@ -388,7 +395,7 @@
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -397,7 +404,8 @@
       "quality",
       "mission-success",
       "standards"
-    ]
+    ],
+    "status": "pending"
   },
   {
     "id": "esa-space-systems-engineering-course",
@@ -433,7 +441,7 @@
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -477,7 +485,7 @@
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -486,7 +494,8 @@
       "forecasting",
       "ESEC-Redu",
       "Brussels"
-    ]
+    ],
+    "status": "pending"
   },
   {
     "id": "esa-space-law-training-course",
@@ -521,7 +530,7 @@
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -530,7 +539,8 @@
       "policy",
       "legal",
       "international"
-    ]
+    ],
+    "status": "pending"
   },
   {
     "id": "esa-space-standards-ecss-course",
@@ -566,7 +576,7 @@
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -574,7 +584,8 @@
       "standards",
       "quality",
       "space-engineering"
-    ]
+    ],
+    "status": "closed"
   },
   {
     "id": "esa-technology-transfer-workshop",
@@ -609,7 +620,7 @@
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -618,7 +629,8 @@
       "innovation",
       "business",
       "entrepreneurship"
-    ]
+    ],
+    "status": "pending"
   },
   {
     "id": "esa-life-support-systems-workshop",
@@ -654,7 +666,7 @@
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -663,7 +675,8 @@
       "BLSS",
       "bioregenerative",
       "sustainability"
-    ]
+    ],
+    "status": "pending"
   },
   {
     "id": "esa-access-to-space-training-course",
@@ -674,7 +687,7 @@
     "description": "5-day course on European launch vehicles, ESA space transportation policy, and the business of launch. No prior space knowledge required; open to any subject. Held annually in October.",
     "url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3#TLP",
     "application_url": "https://learn.esa.int/explore/access-to-space-training-course",
-    "deadline": null,
+    "deadline": "2026-07-12",
     "status": "open",
     "deadline_recurring": true,
     "deadline_month_typical": null,
@@ -699,7 +712,7 @@
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -743,7 +756,7 @@
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -752,7 +765,8 @@
       "governance",
       "Ministerial",
       "diplomacy"
-    ]
+    ],
+    "status": "pending"
   },
   {
     "id": "esa-human-space-physiology-course",
@@ -788,7 +802,7 @@
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -798,7 +812,8 @@
       "ISS",
       "astronaut",
       "life-sciences"
-    ]
+    ],
+    "status": "open"
   },
   {
     "id": "esa-cubesat-summer-school",
@@ -813,7 +828,7 @@
     "deadline_recurring": true,
     "deadline_month_typical": null,
     "deadline_notes": null,
-    "status": "open",
+    "status": "pending",
     "event_date": null,
     "event_month_typical": "July",
     "location": "ESEC-Galaxia, Transinne, Belgium",
@@ -835,7 +850,7 @@
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -879,7 +894,7 @@
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -888,7 +903,8 @@
       "experiment-design",
       "summer-school",
       "parabolic-flight"
-    ]
+    ],
+    "status": "closed"
   },
   {
     "id": "esa-spacecraft-communications-ladybird",
@@ -924,7 +940,7 @@
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -933,7 +949,8 @@
       "simulation",
       "radio",
       "telemetry"
-    ]
+    ],
+    "status": "pending"
   },
   {
     "id": "esa-space-security-cybersecurity-course",
@@ -969,7 +986,7 @@
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-05-28",
+    "last_verified": "2026-07-01",
     "scrape_url": "https://www.esa.int/Education/ESA_Academy/ESA_Academy_opportunities3",
     "scrape_selector": null,
     "tags": [
@@ -978,7 +995,8 @@
       "ESEC-Redu",
       "threat",
       "defence"
-    ]
+    ],
+    "status": "pending"
   },
   {
     "id": "esa-rocketry-training-programme",
@@ -4055,7 +4073,7 @@
     "open_to_non_engineers": true,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-06-02",
+    "last_verified": "2026-07-01",
     "scrape_selector": null,
     "tags": [
       "ESA",
@@ -4066,7 +4084,8 @@
       "ESEC",
       "Belgium",
       "funded"
-    ]
+    ],
+    "status": "closed"
   },
   {
     "id": "esa-concurrent-engineering-challenge",
@@ -4103,7 +4122,7 @@
     "open_to_non_engineers": false,
     "featured": false,
     "needs_review": false,
-    "last_verified": "2026-06-02",
+    "last_verified": "2026-07-01",
     "scrape_selector": null,
     "tags": [
       "ESA",
@@ -4113,7 +4132,8 @@
       "team",
       "challenge",
       "systems-engineering"
-    ]
+    ],
+    "status": "pending"
   },
   {
     "id": "espi-space-policy-summer-school",
@@ -4792,5 +4812,182 @@
       "16-26",
       "funded-accommodation"
     ]
+  },
+  {
+    "id": "esa-cubesat-hands-on-training-week",
+    "title": "CubeSat Hands-On Training Week",
+    "organisation": "ESA Academy",
+    "category": "esa_academy_workshop",
+    "subcategory": null,
+    "description": "Hands-on training week focused on CubeSat hardware and operations. Students gain practical experience with real CubeSat components and subsystems at ESEC-Galaxia.",
+    "url": "https://www.esa.int/Education/ESA_Academy/CubeSat_Hands-On_Training_Week",
+    "application_url": "https://learn.esa.int/explore/cubesat-hands-on-training-week",
+    "deadline": null,
+    "deadline_recurring": true,
+    "deadline_notes": null,
+    "event_date": "2026-10-26",
+    "event_month_typical": "October",
+    "location": "ESEC-Galaxia, Transinne, Belgium",
+    "duration": "1 week",
+    "funding_available": true,
+    "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
+    "funding_amount_eur": 350,
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
+    "open_to_all_fields": false,
+    "team_based": false,
+    "tags": [
+      "CubeSat",
+      "hardware",
+      "hands-on",
+      "small satellites"
+    ],
+    "funding_tags": [
+      "esa-sponsored"
+    ],
+    "scrape_url": null,
+    "last_verified": "2026-07-01",
+    "needs_review": false,
+    "status": "open"
+  },
+  {
+    "id": "esa-ladybird-spacecraft-operations-course",
+    "title": "Ladybird Guide to Spacecraft Operations Training Course",
+    "organisation": "ESA Academy",
+    "category": "esa_academy_workshop",
+    "subcategory": null,
+    "description": "Training course covering spacecraft operations fundamentals based on the popular Ladybird Guide series. Topics include mission operations concepts, ground systems, and spacecraft monitoring.",
+    "url": "https://www.esa.int/Education/ESA_Academy/Ladybird_Guide_to_Spacecraft_Operations_Training_Course",
+    "application_url": "https://learn.esa.int/explore/ladybird-guide-spacecraft-operations",
+    "deadline": null,
+    "deadline_recurring": true,
+    "deadline_notes": null,
+    "event_date": "2026-09-07",
+    "event_month_typical": "September",
+    "location": "ESEC-Galaxia, Transinne, Belgium",
+    "duration": "5 days",
+    "funding_available": true,
+    "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
+    "funding_amount_eur": 350,
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
+    "open_to_all_fields": false,
+    "team_based": false,
+    "tags": [
+      "spacecraft operations",
+      "ground systems",
+      "mission operations"
+    ],
+    "funding_tags": [
+      "esa-sponsored"
+    ],
+    "scrape_url": null,
+    "last_verified": "2026-07-01",
+    "needs_review": false,
+    "status": "open"
+  },
+  {
+    "id": "esa-eo-satellite-system-design-course",
+    "title": "Earth Observation Satellite System Design Training Course",
+    "organisation": "ESA Academy",
+    "category": "esa_academy_workshop",
+    "subcategory": null,
+    "description": "Training course on the design of Earth observation satellite systems, covering mission analysis, payload design, and system engineering aspects specific to EO missions.",
+    "url": "https://www.esa.int/Education/ESA_Academy/Earth_Observation_Satellite_System_Design_Training_Course",
+    "application_url": "https://learn.esa.int/explore/earth-observation-satellite-system-design",
+    "deadline": null,
+    "deadline_recurring": true,
+    "deadline_notes": null,
+    "event_date": "2026-09-28",
+    "event_month_typical": "September",
+    "location": "ESEC-Galaxia, Transinne, Belgium",
+    "duration": "2 weeks",
+    "funding_available": true,
+    "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
+    "funding_amount_eur": 350,
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science"
+    ],
+    "open_to_all_fields": false,
+    "team_based": false,
+    "tags": [
+      "earth observation",
+      "satellite design",
+      "remote sensing",
+      "system engineering"
+    ],
+    "funding_tags": [
+      "esa-sponsored"
+    ],
+    "scrape_url": null,
+    "last_verified": "2026-07-01",
+    "needs_review": false,
+    "status": "closed"
+  },
+  {
+    "id": "esa-eo-disruptive-innovation-course",
+    "title": "Disruptive Innovation and Commercialisation in Earth Observation Training Course",
+    "organisation": "ESA Academy",
+    "category": "esa_academy_workshop",
+    "subcategory": null,
+    "description": "Training course exploring disruptive innovation, business models, and commercialisation strategies in the Earth observation sector. Covers EO data markets, start-up ecosystems, and downstream applications.",
+    "url": "https://www.esa.int/Education/ESA_Academy/Disruptive_Innovation_and_Commercialisation_in_Earth_Observation_Training_Course",
+    "application_url": "https://learn.esa.int/explore/disruptive-innovation-earth-observation",
+    "deadline": null,
+    "deadline_recurring": true,
+    "deadline_notes": null,
+    "event_date": "2026-07-06",
+    "event_month_typical": "July",
+    "location": "ESEC-Galaxia, Transinne, Belgium",
+    "duration": "5 days",
+    "funding_available": true,
+    "funding_details": "Accommodation + meals + up to €350 travel reimbursement",
+    "funding_amount_eur": 350,
+    "eligibility_level": [
+      "BSc",
+      "MSc",
+      "PhD"
+    ],
+    "eligibility_fields": [
+      "engineering",
+      "science",
+      "business"
+    ],
+    "open_to_all_fields": false,
+    "team_based": false,
+    "tags": [
+      "earth observation",
+      "innovation",
+      "commercialisation",
+      "business",
+      "NewSpace"
+    ],
+    "funding_tags": [
+      "esa-sponsored"
+    ],
+    "scrape_url": null,
+    "last_verified": "2026-07-01",
+    "needs_review": false,
+    "status": "closed"
   }
 ]
